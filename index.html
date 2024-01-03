@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Smathy</title>
+</head>
+<body>
+    <div style="margin-left: 150px;margin-top: 100px;">
+        <p style="font-size: 50px;"><span class="main-text">Hey</span>👋 <span class="main-text">I'm Mathis</span></p>
+        <p style="color: white;font-size: 25px;margin-top: -30px;">Multifaceted Tech Entrepreneur</p>
+        <div class="seperator"></div>
+        <p style="color: rgb(189, 189, 189);width: 45%;">I'm a seasoned website developer, having crafted numerous websites and diverse projects. In addition to these endeavors, I've even designed my own programming language, showcasing my enduring love for acquiring new knowledge.</p>
+        <button onmouseover="this.style.background = 'linear-gradient(to left, rgb(255, 38, 38), yellow)'" onmouseout="this.style.background = 'linear-gradient(to right, rgb(255, 38, 38), yellow)'" onclick="start()" style="background: linear-gradient(to right, rgb(255, 38, 38), yellow);border-radius: 10px;border: none;width: 100px;height: 40px;display: flex;justify-content: space-around;align-items: center;cursor: pointer;"><span style="font-size: 15px;color: white;">Start</span><img src="./img/send.png" alt="" style="height: 90%;filter: invert(100%);"></button>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center;margin-top: 100px;">
+        <div class="seperator"></div>
+    </div>
+    <div class="clearfix">
+        <div onmouseover="this.style.background = 'rgb(48, 48, 48)'" onmouseout="this.style.background = 'rgb(54, 54, 54)'" onclick="aboutme()" style="float: left;margin-left: 10px;background: rgb(54, 54, 54);border: solid black 1px;width: 50%;border-radius: 10px;margin-top: 50px;color: white;">
+            <div style="text-align: center;">
+                <div>
+                    <p style="font-size: 25px;font-weight: bold;background: linear-gradient(to right, rgb(255, 0, 0) 25%, rgb(251, 255, 0));color: transparent;-webkit-background-clip: text;">About Me</p>
+                    <p style="color: rgb(189, 189, 189);">I have accumulated extensive experience by actively contributing to numerous website projects, honing my skills in both web development and programming.</p>
+                </div>
+                <div>
+                    <!--An image of me-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div onmouseover="this.style.background = 'rgb(48, 48, 48)';" onmouseout="this.style.background = 'rgb(54, 54, 54)'" onclick="whatiknow()" style="float: right;margin-right: 10px;background: rgb(54, 54, 54);border: solid black 1px;width: 50%;border-radius: 10px;margin-top: 50px;color: white;">
+            <div style="text-align: center;">
+                <div>
+                    <p style="font-size: 25px;font-weight: bold;background: linear-gradient(to right, rgb(255, 0, 0) 25%, rgb(251, 255, 0));color: transparent;-webkit-background-clip: text;">What I Know?</p>
+                    <p style="color: rgb(189, 189, 189);">I know: C, Python, D, Node.js, HTML, CSS, Javascript, Typescript, Assembly and Skript.</p>
+                </div>
+                <div>
+                    <!--An image of me-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: rgb(39, 39, 39);margin-top: 50px;">
+        <div style="height: 5px;"></div>
+        <p style="text-align: center;font-size: 25px;font-weight: bold;background: linear-gradient(to right, rgb(255, 0, 0) 25%, rgb(251, 255, 0));color: transparent;-webkit-background-clip: text;">Projects I Made</p>
+        <div style="display: flex;color: white;margin-left: 10px;">
+            <div style="text-align: center;">
+                <p style="font-size: 20px;">Lumix</p>
+                <p>Lumix is a high-performance, efficient, and secure programming language with a rich library ecosystem. Combining high and low-level capabilities, it offers versatility for various needs. Compiled for accessibility, Lumix provides a modern, clean syntax, making it an ideal choice for developers.</p>
+            </div>
+            <div style="margin-left: 50px;margin-bottom: 20px;text-align: center;">
+                <p style="font-size: 20px;">Hubu</p>
+                <p>Hubu: An HTML compiler that transforms Hubu and HTML code into standard HTML. Adding variables, functions, and imports to enhance functionality, Hubu simplifies the HTML development process. Compile your Hubu code with ease for a seamless integration of features into your HTML projects.</p>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: rgb(29, 29, 29);color: white;">
+        <p style="margin-left: 10px;">© 2023 Smathy. All Rights Reserved.</p>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>

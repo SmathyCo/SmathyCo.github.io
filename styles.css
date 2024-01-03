@@ -1,0 +1,28 @@
+body {
+    margin: 0 auto;
+    background-color: rgb(29, 29, 29);
+}
+
+.main-text {
+    font-weight: bold;
+    background: linear-gradient(to right, rgb(255, 38, 38), yellow);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.box:hover {
+    background: rgb(48, 48, 48);
+}
+
+.seperator {
+    background: linear-gradient(to right, rgb(255, 38, 38), yellow);
+    width: 45%;
+    height: 5px;
+    border-radius: 10px;
+}

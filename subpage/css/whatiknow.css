@@ -1,0 +1,16 @@
+body {
+    margin: 0 auto;
+    background-color: rgb(29, 29, 29);
+}
+
+.box {
+    border: solid black 1px;
+    width: 300px;
+}
+
+.color-text {
+    background: linear-gradient(to right, rgb(255, 0, 0) 25%, rgb(251, 255, 0));
+    color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+}
