@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>SmathyCo.</title>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <a onclick="location.reload()">Home</a>
+            <a onclick="scrollToSection('learn')">Learn</a>
+            <a onclick="scrollToSection('reqCode')">Request Code</a>
+        </ul>
+    </nav>
+    <div class="main">
+        <p style="font-size: 50px;font-weight: bold;margin-top: 30vh;">SmathyCo.</p>
+        <img src="./files/Logo Tiny.png" class="logo" alt="Logo Tiny">
+    </div>
+    <div class="line" style="margin-top: 200px;"></div>
+    <div class="welcome">
+        <p><span style="font-weight: bold;">Welcome to SmathyCo</span> - your destination for programming excellence! Explore our site to discover how we can help you enhance your coding skills. From beginner-friendly resources to custom coding solutions, we're here to assist.</p>
+    </div>
+    <div class="box" onclick="goTo('https:/\/discord.gg/zyeuVEswE4')" id="learn">
+        <p class="box-title">Start Learning</p>
+        <p style="margin-left: 10px;margin-right: 10px;">The learning tutorials are all given on the Discord server. You can click on this box to join the Discord server and start learning a new programming language!</p>
+    </div>
+    <div class="box" onclick="goTo('https:/\/forms.gle/F8HgTJBTTQrd8Djy6')" style="margin: 100px 0 auto 100px;" id="reqCode">
+        <p class="box-title">Code For You</p>
+        <p style="margin-left: 10px;margin-right: 10px;">For us to make a program or something else for you we will need you to complete a formulary so we can then contact you and start the developement of your program!</p>
+    </div>
+    <p style="text-align: center;font-size: 25px;font-weight: bold;margin-top: 150px;">What's new?</p>
+    <div class="boxNoHover" style="height: 215px;margin-left: auto;margin-right: auto;">
+        <p class="box-title">New Logo</p>
+        <div style="text-align: center;">
+            <p>The new logo was made using multiple tools and technics and here is the final result:</p>
+            <img src="./files/Logo Tiny Less Crop.png" alt="Logo" width="90px" height="90px" style="margin-top: -10px;background-color: rgba(0, 0, 0, 0.41);box-shadow: black 1px 3px 10px;border-radius: 50%;">
+        </div>
+    </div>
+    <div style="margin-top: 50px;margin-left: 25px;">
+        <p>© 2024 SmathyCo. All Rights Reserved.</p>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
