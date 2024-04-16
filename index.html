@@ -5,13 +5,12 @@
     <title>SmathyCo - Innovative Coding Solutions</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="icon" href="./files/Logo Tiny.png" type="image/png">
+    <link rel="icon" href="files/sc-small.png" type="image/png">
 </head>
 <body>
-    <header style="display: flex;align-items: center;background-color: #333;color: #fff;padding: 20px;justify-content: space-between;">
-        <img src="./files/Logo Tiny.png" alt="SmathyCo Logo" style="height: 80px;margin-right: 10px;">
-        <div style="margin-right: auto;margin-left: calc(50% - 168px);transform: translateX(-50%);">
-            <h1 style="font-size: 24px; margin: 0;">Welcome to SmathyCo</h1>
+    <header>
+        <div style="margin-right: auto;margin-left: calc(50%);transform: translateX(-50%);">
+            <img src="files/sc-large.png" alt="SmathyCo" style="height: 80px">
             <p style="font-size: 16px; margin: 5px 0 0;">Your partner in innovative coding solutions</p>
         </div>
     </header>
@@ -21,46 +20,98 @@
         <a href="./html/contact.html">Contact</a>
     </nav>
     <div class="container">
-        <section id="services" class="content">
-            <h2>Our Services</h2>
+        <section id="maincontent" class="content">
+            <h2>Welcome to SmathyCo!</h2>
             <p>SmathyCo offers top-notch coding services tailored to your needs. Whether you need a website, application, or custom software, we've got you covered.</p>
-            <p>We also provide assistance in finding skilled professionals for your projects, ensuring successful completion and satisfaction.</p>
-            <img onclick="openLink('https:\/\/discord.gg\/vZvbqsRVBW')" style="cursor: pointer;" height="50px" src="./files/joinus.png" alt="">
-            <p style="color: gray;font-size: 15px;">If our marketing service proves ineffective for your needs, we will refund your money.</p>
+            <a href="https://discord.gg/vZvbqsRVBW" style="cursor: pointer;">
+                <img width="20%" src="files/joinus.png">
+            </a>
+            &nbsp;
+            <a href="mailto:SmathyCo@gmail.com" style="cursor: pointer;">
+                <img width="20%" src="files/email.png">
+            </a>
+            <p class="disclamer">If our marketing service proves ineffective for your needs, we will refund your money.</p>
+            <p class="disclamer">Everything is free for a limited time!</p>
         </section>
-        <section>
-            <h2>Prices</h2>
-            <div style="border: 1px solid #838383; padding: 10px; border-radius: 5px; background-color: #f9f9f9;">
-                <section>
-                    <h3>Website Development</h3>
-                    <p style="font-weight: bold;">FREE</p>
-                </section>
-                <hr style="border-top: 1px solid #838383;">
-                <section>
-                    <h3>Application Development</h3>
-                    <p style="font-weight: bold;">FREE</p>
-                </section>
-                <hr style="border-top: 1px solid #838383;">
-                <section>
-                    <h3>Custom Software Development</h3>
-                    <p style="font-weight: bold;">FREE</p>
-                </section>
-                <hr style="border-top: 1px solid #838383;">
-                <section>
-                    <h3>Professional Project Assistance</h3>
-                    <p style="font-weight: bold;">FREE</p>
-                </section>
-                <hr style="border-top: 1px solid #838383;">
-                <p style="color: #505050;">Everything is free for a limited time!</p>
+        <section style="margin-bottom: 100px;">
+            <h3>Website Development</h3>
+            <p style="margin-left: 10px;width: 50%;">We're here to build you a top-notch website from scratch. Our team of experts will handle everything from design to coding, ensuring your online presence shines and meets your goals.</p>
+            <div style="margin-top: 10px;cursor: pointer;">
+                <div onclick="createPopup('Hey futur coder! Thanks for visiting our website, you can buy a service by contacting us by Email our for faster responce, join our Discord and contact staff!')" class="plan" style="display: flex;">
+                    <div style="margin-left: 50px;">
+                        <p style="font-weight: bold;">Economic</p>
+                        <p style="margin-left: 25px;color: rgb(255, 94, 0);">x$</p>
+                    </div>
+                    <div class="sep"></div>
+                    <div>
+                        <div style="display: flex;color: white;">
+                            <span style="margin-top: 25px;">Fast delivery</span><div class="cross" style="margin-left: 25px;margin-top: 22px;"></div><div class="sept"></div><span style="margin-top: 25px;">Multiple Page</span><div class="cross" style="margin-left: 25px;margin-top: 22px;"></div><div class="sept"></div><span style="margin-top: 25px;">Server Side</span><div class="cross" style="margin-left: 25px;margin-top: 22px;"></div><div class="sept"></div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="createPopup('Hey futur coder! Thanks for visiting our website, you can buy a service by contacting us by Email our for faster responce, join our Discord and contact staff!')" class="plan" style="display: flex;cursor: pointer;">
+                    <div style="margin-left: 50px;">
+                        <p style="font-weight: bold;margin-right: 11px;margin-left: 10px;">Normal</p>
+                        <p style="margin-left: 25px;color: rgb(255, 94, 0);">x$</p>
+                    </div>
+                    <div class="sep"></div>
+                    <div>
+                        <div style="display: flex;color: white;">
+                            <span style="margin-top: 25px;">Fast delivery</span><div class="checkmark" style="margin-left: 25px;margin-top: 22px;margin-right: -24px;"></div><div class="sept"></div><span style="margin-top: 25px;margin-right: -24px;">Multiple Page</span><div class="checkmark" style="margin-left: 45px;margin-top: 22px;margin-right: -21px;"></div><div class="sept"></div><span style="margin-top: 25px;">Server Side</span><div class="cross" style="margin-left: 25px;margin-top: 22px;margin-right: -1px;"></div><div class="sept"></div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="createPopup('Hey futur coder! Thanks for visiting our website, you can buy a service by contacting us by Email our for faster responce, join our Discord and contact staff!')" class="plan" style="display: flex;cursor: pointer;">
+                    <div style="margin-left: 50px;">
+                        <p style="font-weight: bold;margin-right: 8px;">Premium</p>
+                        <p style="margin-left: 25px;color: rgb(255, 94, 0);">x$</p>
+                    </div>
+                    <div class="sep"></div>
+                    <div>
+                        <div style="display: flex;color: white;">
+                            <span style="margin-top: 25px;margin-right: -25px;">Fast delivery</span><div class="checkmark" style="margin-left: 45px;margin-top: 22px;margin-right: -20px;"></div><div class="sept"></div><span style="margin-top: 25px;">Multiple Page</span><div class="checkmark" style="margin-left: 25px;margin-top: 22px;margin-right: -25px;"></div><div class="sept"></div><span style="margin-top: 25px;">Server Side</span><div class="checkmark" style="margin-left: 25px;margin-top: 22px;margin-right: -25px;"></div><div class="sept"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <section id="contact" class="content">
-            <h2>Contact Us</h2>
-            <p>Ready to take your project to the next level? Contact us today!</p>
-            <p>Email: SmathyCo@gmail.com</p>
-            <a href="" onclick="openLink('https:\/\/discord.gg\/vZvbqsRVBW')"><p>Discord</p></a>
+        <section style="margin-bottom: 100px;">
+            <h3>Professional Project Assistance</h3>
+            <p style="margin-left: 10px;width: 50%;">Experience professional assistance tailored to your needs, whether it's troubleshooting a computer hardware issue or debugging a program's code. Our experts are equipped to tackle a wide range of challenges, ensuring that your technology-related problems are resolved efficiently and effectively.</p>
+            <div style="margin-top: 10px;cursor: pointer;">
+                <div onclick="createPopup('Hey futur coder! Thanks for visiting our website, you can buy a service by contacting us by Email our for faster responce, join our Discord and contact staff!')" class="plan" style="display: flex;">
+                    <div style="margin-left: 50px;">
+                        <p style="font-weight: bold;">Normal</p>
+                        <p style="margin-left: 25px;color: rgb(255, 94, 0);">x$</p>
+                    </div>
+                    <div style="margin-left: 70px;" class="sep"></div>
+                    <div>
+                        <div style="display: flex;color: white;">
+                            <span style="margin-top: 25px;">Professional</span><div class="checkmark" style="margin-left: 25px;margin-top: 22px;"></div><div style="margin-left: 30px;" class="sept"></div><span style="margin-top: 25px;">Swift</span><div class="checkmark" style="margin-left: 25px;margin-top: 22px;margin-right:40px;"></div><div class="sept"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-    </div>
+        <section style="margin-bottom: 100px;">
+            <h3>Computer Science Tutoring</h3>
+            <p style="margin-left: 10px;width: 50%;">We offer personalized, one-on-one tutoring sessions designed to teach you the coding skills necessary to achieve your specific objectives and complete your projects with confidence.</p>
+            <div style="margin-top: 10px;cursor: pointer;">
+                <div onclick="createPopup('Hey futur coder! Thanks for visiting our website, you can buy a service by contacting us by Email our for faster responce, join our Discord and contact staff!')" class="plan" style="display: flex;">
+                    <div style="margin-left: 50px;">
+                        <p style="font-weight: bold;">Normal</p>
+                        <p style="margin-left: 25px;color: rgb(255, 94, 0);">x$</p>
+                    </div>
+                    <div style="margin-left: 70px;" class="sep"></div>
+                    <div>
+                        <div style="display: flex;color: white;">
+                            <span style="margin-top: 25px;">Professional</span><div class="checkmark" style="margin-left: 25px;margin-top: 22px;"></div><div style="margin-left: 30px;" class="sept"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
     <footer>
         <p>© 2024 SmathyCo. All rights reserved.</p>
     </footer>
