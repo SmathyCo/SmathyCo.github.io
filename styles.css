@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #292929;
+    min-width: 1000px;
 }
 header {
     background-color: #333;
