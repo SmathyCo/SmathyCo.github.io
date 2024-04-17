@@ -164,3 +164,7 @@ div.prices {
     background-color: rgba(0, 0, 255, 0.397);
     border-radius: 10px;
 }
+
+.trial:hover {
+    text-decoration: underline;
+}
