@@ -69,6 +69,20 @@ function search() {
         op("typescript/typescript.html");
     } else if (x === "VISUALBASIC" || x === "VB") {
         op("visualbasic/visualbasic.html");
+    } else if (x === "GROOVY") {
+        op("groovy/groovy.html");
+    } else if (x === "MATLAB" || x === "ML") {
+        op("matlab/matlab.html");
+    } else if (x === "MAKE" || x === "MK" || x === "MF" || x === "MAKEFILE") {
+        op("make/make.html");
+    } else if (x === "SHELL" || x === "SH") {
+        op("shell/shell.html");
+    } else if (x === "DELPHI") {
+        op("delphi/delphi.html");
+    } else if (x === "POWERSHELL" || x === "PS") {
+        op("powershell/powershell.html");
+    } else if (x === "BASH") {
+        op("bash/bash.html");
     } else {
         createPopup("The programming language " + document.getElementById("search").value + " wasn't found. Try correcting errors in the name or suggest the programming language on our Discord.");
     }
