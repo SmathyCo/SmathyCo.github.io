@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skript Tutorial - SmathyCo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="./skript.css">
+    <link rel="icon" href="../../../files/sc-small.png" type="image/png">
+    <style>
+        /* Add space around steps */
+        .step {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="margin-right: auto;margin-left: calc(50%);transform: translateX(-50%);">
+            <img src="../../../files/sc-large.png" alt="SmathyCo" style="height: 80px">
+            <p style="font-size: 16px; margin: 5px 0 0;">Your partner in innovative coding solutions</p>
+        </div>
+    </header>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../../html/services.html">Services</a>
+        <a href="../../../html/contact.html">Contact</a>
+        <a href="../search.html">Learn Online</a>
+    </nav>
+    <div class="container">
+        <section id="maincontent" class="content">
+            <h2>Welcome to Skript Tutorial</h2>
+            <p>Skript is a powerful scripting language used to create plugins for Minecraft servers running Bukkit/Spigot. Let's get started!</p>
+            <div class="step">
+                <h3>Introduction to Skript</h3>
+                <p>Skript is a scripting language that allows server administrators to customize gameplay on Minecraft servers without the need for extensive plugin development. It simplifies the process of creating custom features and functionality.</p>
+            </div>
+            <div class="step">
+                <h3>Setting Up Skript</h3>
+                <p>To use Skript, you need to have a Minecraft server running Bukkit or Spigot. Once your server is set up, you can install the Skript plugin, which allows you to write and execute Skript scripts directly in your server.</p>
+                <!-- Add content for setting up Skript -->
+            </div>
+            <div class="step">
+                <h3>Hello, World! in Skript</h3>
+                <p>Let's start with a simple "Hello, World!" script in Skript:</p>
+                <div class="code">
+                    <pre><code>
+on join:
+    send "Hello, World!" to player
+                    </code></pre>
+                </div>
+                <p>This script sends "Hello, World!" to a player whenever they join the server.</p>
+            </div>
+            <div class="step">
+                <h3>Basic Syntax</h3>
+                <p>Skript syntax is designed to be human-readable and intuitive. It uses a natural language-like syntax with keywords and expressions that resemble English sentences.</p>
+                <!-- Add content for basic syntax -->
+            </div>
+            <div class="step">
+                <h3>Events and Conditions</h3>
+                <p>In Skript, events are triggers that cause scripts to run, and conditions are used to check if certain criteria are met before executing actions. Here's an example:</p>
+                <div class="code">
+                    <pre><code>
+on player death:
+    if victim is a player:
+        broadcast "%victim% died!"
+                    </code></pre>
+                </div>
+                <p>This script broadcasts a message when a player dies.</p>
+            </div>
+            <div class="step">
+                <h3>Variables and Data Types</h3>
+                <p>Skript supports various data types including strings, numbers, booleans, and lists. Variables can be used to store and manipulate data within scripts.</p>
+                <!-- Add content for variables and data types -->
+            </div>
+            <div class="step">
+                <h3>Loops and Iteration</h3>
+                <p>Skript provides loop structures like foreach loops and while loops for iterating over collections of data or repeating actions until a condition is met.</p>
+                <!-- Add content for loops and iteration -->
+            </div>
+            <div class="step">
+                <h3>Functions and Effects</h3>
+                <p>Functions and effects in Skript allow you to define custom actions and behaviors. Functions can take parameters and return values, while effects perform actions in the game world.</p>
+                <!-- Add content for functions and effects -->
+            </div>
+            <div class="step">
+                <h3>Expressions and Operators</h3>
+                <p>Skript supports various expressions and operators for performing calculations, comparisons, and logical operations. These allow you to manipulate data and control the flow of your scripts.</p>
+                <!-- Add content for expressions and operators -->
+            </div>
+            <div class="step">
+                <h3>Error Handling</h3>
+                <p>Skript provides error handling mechanisms to handle unexpected situations and errors gracefully. You can use try-catch blocks to catch and handle exceptions in your scripts.</p>
+                <!-- Add content for error handling -->
+            </div>
+            <div class="step">
+                <h3>Further Learning</h3>
+                <p>Skript offers a wide range of features and possibilities for customizing Minecraft servers. There are many advanced topics like event scripting, GUI creation, database integration, and plugin development to explore.</p>
+                <p>Happy scripting with Skript!</p>
+                <!-- Add content for further learning -->
+            </div>
+        </section>
+    </div>
+</body>
+<script src="../../../index.js"></script>
+</html>
