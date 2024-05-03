@@ -1,0 +1,23 @@
+.code {
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.here {
+    color: rgb(66, 66, 255);
+    cursor: pointer;
+}
+
+.here:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}

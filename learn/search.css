@@ -1,0 +1,14 @@
+.searchButton {
+    background-color: rgb(78, 78, 255);
+    border: solid 1px black;
+    height: 30px;
+}
+
+.searchButton:hover {
+    background-color: rgb(48, 48, 255);
+}
+
+.searchInput {
+    border: solid 1px black;
+    height: 23px;
+}
