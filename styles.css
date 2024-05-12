@@ -1,170 +1,108 @@
 body {
-    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 2000px;
+    font-family: system-ui;
+}
+
+ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #292929;
-    min-width: 1000px;
-}
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
-nav {
-    background-color: #444;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-nav a {
-    color: #fff;
+
+li a {
     text-decoration: none;
-    padding: 10px 20px;
-}
-nav a:hover {
-    background-color: #555;
-}
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-.content {
-    color: white; /*THIS IS TEXT COLOR. THOUGHT I SHOULD MAKE THAT CLEAR. - coolboy*/
-    padding: 20px;
-    background-color: #292929;
-    margin-top: 20px;
-    margin-bottom: 100px;
-}
-.discord-button {
-    background-color: #7289DA;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
+    color: white;
     font-weight: bold;
     cursor: pointer;
 }
-.discord-button:hover {
-    background-color: #5f73ba;
+
+li a:hover {
+    transition: linear 0.2s;
+    color: gray;
 }
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    text-align: center;
+
+nav {
     position: fixed;
-    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.mainSection {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/big-background.jpg');
+    background-size: cover;
     width: 100%;
-}
-@media (max-width: 1023px) {
-    .content {
-        margin-top: -10px;
-        margin-bottom: 150px;
-    }
+    height: 100vh;
+    text-align: center;
 }
 
-p,h1,h2,h3,h4,h5,h6 {
-    color:white;
+.plan {
+    transition: ease 0.3s;
+    text-align: center;
+    width: 35%;
+    cursor: pointer;
 }
 
-.disclamer {
-    color: rgb(131, 131, 131)
-}
-
-hr {
-    border-top: 1px solid #ffffff;
-}
-
-.money {
+.plan .p {
+    font-size: 25px;
     font-weight: bold;
-    color:rgb(149, 255, 79);
-}
-
-div.prices {
-    border: 2px solid #0c0c0c;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #1a1a1a;
-}
-
-.sep {
-    height: 75px;
-    background-color: #838383;
-    width: 1px;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-.cross {
-    width: 25px;
-    height: 25px;
-    position: relative;
-}
-
-.cross:before, .cross:after {
-    content: '';
-    position: absolute;
-    width: 3px;
-    height: 100%;
-    background-color: rgb(255, 0, 0);
-    box-shadow: black 0px 0px 3px 1px;
-}
-
-.cross:before {
-    transform: rotate(45deg);
-}
-
-.cross:after {
-    transform: rotate(-45deg);
-}
-
-.sept {
-    height: 50px;
-    background-color: #838383;
-    width: 1px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 10px;
-}
-
-.checkmark {
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
-    position: relative;
-}
-
-.checkmark::before, .checkmark::after {
-    content: '';
-    position: absolute;
-    width: 3px; /* Thickness of the checkmark */
-    background-color: green; /* Color of the checkmark */
-    box-shadow: black 0px 0px 1px 0.5px;
-}
-
-.checkmark::before {
-    height: 24px; /* Length of the vertical line */
-    top: 5%; /* Adjust position as needed */
-    left: 45%; /* Adjust position as needed */
-    transform: rotate(45deg);
-}
-
-.checkmark::after {
-    height: 15px; /* Length of the diagonal line */
-    top: 20%; /* Adjust position as needed */
-    left: 20%; /* Adjust position as needed */
-    transform: rotate(-45deg);
 }
 
 .plan:hover {
-    background-color: rgba(0, 0, 255, 0.397);
-    border-radius: 10px;
+    transition: ease 0.3s;
+    transform: translateY(-5px);
 }
 
-.trial:hover {
-    text-decoration: underline;
+.about .title, .contactus .title {
+    font-size: 30px;
+}
+
+.about, .contactus {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.about .text, .contactus .text {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.contactus {
+    margin-top: 250px;
+}
+
+.footer {
+    background-color: rgb(165, 165, 165);
+    height: 48px;
+}
+
+.footer .rights {
+    text-align: center;
+    padding: 1%;
+}
+
+.disc2 {
+    transition: ease 0.3s;
+}
+
+.disc2:hover {
+    transition: ease 0.3s;
+    transform: translateY(-5px);
+}
+
+.logo {
+    margin-top: 25vh;
+}
+
+@media only screen and (max-width: 414px) and (max-height: 896px) {
+    body {
+        max-width: 768px;
+    }
+    .logo {
+        width: 250px;
+    }
 }

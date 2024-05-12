@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../pages/pages.css">
+    <link rel="stylesheet" href="../languages.css">
+    <link rel="icon" type="image/x-icon" href="../../../img/sc-small.png">
+    <title>SmathyCo | Learn</title>
+</head>
+<body>
+    <nav style="top: 0;">
+        <ul>
+            <li style="margin-right: 20%;"><a href="../../search.html">Learn</a></li>
+            <li><a href="../../../index.html">Home</a></li>
+            <li style="margin-left: 20%;"><a onclick="scrollToId('contact')">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="main-title">
+        <p class="p1" style="padding-top: 200px;">ObjectiveC</p>
+    </section>
+    <section class="container" style="margin-bottom: 100px;">
+        <h2>Welcome to Objective-C Tutorial</h2>
+        <p>Objective-C is a general-purpose, object-oriented programming language used by Apple for iOS, macOS, watchOS, and tvOS development. Let's dive into the basics!</p>
+        <div class="step">
+            <h3>Introduction to Objective-C</h3>
+            <p>Objective-C is a superset of the C programming language with object-oriented capabilities. It's the primary language used for developing software for Apple platforms.</p>
+        </div>
+        <div class="step">
+            <h3>Setting Up Objective-C Development Environment</h3>
+            <p>To start programming in Objective-C, you need to set up Xcode, Apple's integrated development environment (IDE). Xcode includes everything you need to create iOS, macOS, watchOS, and tvOS apps.</p>
+            <!-- Add content for setting up Objective-C environment -->
+        </div>
+        <div class="step">
+            <h3>Hello, World! in Objective-C</h3>
+            <p>Let's write a simple "Hello, World!" program in Objective-C:</p>
+            <div class="code">
+                <pre><code>
+#import &lt;Foundation/Foundation.h&gt;
+
+int main(int argc, const char * argv[]) {
+@autoreleasepool {
+    NSLog(@"Hello, World!");
+}
+return 0;
+}
+                </code></pre>
+            </div>
+            <p>This program prints "Hello, World!" to the console.</p>
+        </div>
+        <div class="step">
+            <h3>Objective-C Syntax</h3>
+            <p>Objective-C syntax is based on Smalltalk, a dynamic, reflective programming language. It supports object-oriented programming concepts such as classes, objects, methods, properties, and more.</p>
+            <!-- Add content for Objective-C syntax -->
+        </div>
+        <div class="step">
+            <h3>Classes and Objects</h3>
+            <p>Objective-C is a class-based language where objects are instances of classes. You can define classes using interface and implementation files (.h and .m files) and create objects using alloc-init methods.</p>
+            <!-- Add content for classes and objects -->
+        </div>
+        <div class="step">
+            <h3>Memory Management</h3>
+            <p>Objective-C uses manual memory management with reference counting. Developers are responsible for managing memory allocation and deallocation using retain, release, and autorelease methods.</p>
+            <!-- Add content for memory management -->
+        </div>
+        <div class="step">
+            <h3>Properties and Dot Notation</h3>
+            <p>Objective-C introduced properties and dot notation to simplify getter and setter method calls for object properties. Properties can have attributes such as nonatomic, atomic, strong, weak, etc.</p>
+            <!-- Add content for properties and dot notation -->
+        </div>
+        <div class="step">
+            <h3>Protocols and Delegates</h3>
+            <p>Objective-C uses protocols to declare methods that can be implemented by any class. Delegates are objects that conform to protocols and handle tasks or events on behalf of other objects.</p>
+            <!-- Add content for protocols and delegates -->
+        </div>
+        <div class="step">
+            <h3>ARC (Automatic Reference Counting)</h3>
+            <p>ARC is a memory management feature introduced in Objective-C to automate memory management tasks. It automatically inserts retain, release, and autorelease calls at compile time.</p>
+            <!-- Add content for ARC -->
+        </div>
+        <div class="step">
+            <h3>Further Learning</h3>
+            <p>Objective-C is the foundation for iOS and macOS app development. Explore online tutorials, documentation, and Objective-C resources to further enhance your skills.</p>
+            <p>Happy coding with Objective-C!</p>
+            <!-- Add content for further learning -->
+        </div>
+    </section>
+    <footer class="footer" style="margin-top: -65px;">
+        <p class="rights">© 2024 SmathyCo. All rights reserved.</p>
+    </footer>
+</body>
+<script src="../../../index.js"></script>
+<script src="../../search.js"></script>
+</html>

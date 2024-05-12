@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../pages/pages.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="icon" type="image/x-icon" href="../img/sc-small.png">
+    <title>SmathyCo</title>
+</head>
+<body>
+    <nav style="top: 0;">
+        <ul>
+            <li style="margin-right: 20%;"><a href="../learn/search.html">Learn</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li style="margin-left: 20%;"><a onclick="scrollToId('contact')">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="main-title">
+        <p class="p1">Search</p>
+        <div style="display: inline-block;">
+            <input type="text" id="search" class="input">
+            <button onclick="search()" class="enterButton">Enter</button>
+        </div>
+        <p class="p2">Search for a programming language that you would like to learn or would like to learn more about.</p>
+    </section>
+    <footer class="footer" style="margin-top: -65px;">
+        <p class="rights">© 2024 SmathyCo. All rights reserved.</p>
+    </footer>
+</body>
+<script src="../index.js"></script>
+<script src="./search.js"></script>
+</html>

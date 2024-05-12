@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../pages/pages.css">
+    <link rel="stylesheet" href="../languages.css">
+    <link rel="icon" type="image/x-icon" href="../../../img/sc-small.png">
+    <title>SmathyCo | Learn</title>
+</head>
+<body>
+    <nav style="top: 0;">
+        <ul>
+            <li style="margin-right: 20%;"><a href="../../search.html">Learn</a></li>
+            <li><a href="../../../index.html">Home</a></li>
+            <li style="margin-left: 20%;"><a onclick="scrollToId('contact')">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="main-title">
+        <p class="p1" style="padding-top: 200px;">C</p>
+    </section>
+    <section class="container" style="margin-bottom: 100px;">
+        <h2>Welcome to C Programming Tutorial</h2>
+        <p>C is a powerful general-purpose programming language used for developing system software, application software, and more. Let's dive into the basics!</p>
+        <h3 style="margin-top: 100px;">Getting Started</h3>
+        <p>To start programming in C, you'll need a text editor and a C compiler installed on your system. Popular choices include GCC (GNU Compiler Collection) and Clang.</p>
+        <h3 style="margin-top: 100px;">Your First C Program</h3>
+        <p>Let's write a simple "Hello, World!" program:</p>
+        <div class="code">
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+printf("Hello, World!\n");
+return 0;
+}
+            </code></pre>
+        </div>
+        <p>Save this code in a file with a .c extension, such as hello.c. Then, compile it using your C compiler:</p>
+        <div class="code">
+            <pre><code>
+gcc hello.c -o hello
+            </code></pre>
+        </div>
+        <p>This will generate an executable file named hello. Now, you can run it:</p>
+        <div class="code">
+            <pre><code>
+./hello
+            </code></pre>
+        </div>
+        <p>You should see the output:</p>
+        <div class="code">
+            <pre><code>
+Hello, World!
+            </code></pre>
+        </div>
+        <h3 style="margin-top: 100px;">Basic Syntax</h3>
+        <p>C follows a syntax that includes statements, variables, data types, and functions. Here are some essential syntax rules:</p>
+        <ul>
+            <li>Statements end with a semicolon (;).</li>
+            <li>Variables must be declared before use.</li>
+            <li>Comments start with /* and end with */.</li>
+            <li>Functions have a return type, name, parameters (if any), and a body enclosed in curly braces {}.</li>
+        </ul>
+        <h3 style="margin-top: 100px;">Control Structures</h3>
+        <p>C supports various control structures like if-else, loops (for, while, do-while), switch-case, etc., for flow control in programs.</p>
+        <h3 style="margin-top: 100px;">Functions</h3>
+        <p>Functions in C allow you to break your program into smaller, reusable parts. They typically consist of a function signature (return type, name, parameters) and a function body.</p>
+        <h3 style="margin-top: 100px;">Arrays and Pointers</h3>
+        <p>C provides powerful features for working with arrays and pointers, essential for low-level programming and memory management.</p>
+        <h3 style="margin-top: 100px;">Further Learning</h3>
+        <p>C is a vast language with numerous features and capabilities. To deepen your understanding, consider exploring topics like memory management, file I/O, and data structures.</p>
+        <p>We can help you with a private tutor!</p>
+    </section>
+    <footer class="footer" style="margin-top: -65px;">
+        <p class="rights">© 2024 SmathyCo. All rights reserved.</p>
+    </footer>
+</body>
+<script src="../../../index.js"></script>
+<script src="../../search.js"></script>
+</html>

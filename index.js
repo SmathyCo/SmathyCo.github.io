@@ -1,30 +1,12 @@
-function openLink(link) {
-    window.open(link, "_blank");
+function openFile(path) {
+    window.open(path, "_self");
 }
 
-function createPopup(message) {
-    var overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.zIndex = '1000';
-    document.body.appendChild(overlay);
-    var popup = document.createElement('div');
-    popup.style.position = 'fixed';
-    popup.style.top = '50%';
-    popup.style.left = '50%';
-    popup.style.transform = 'translate(-50%, -50%)';
-    popup.style.background = '#ffffff';
-    popup.style.padding = '20px';
-    popup.style.border = '2px solid #000000';
-    popup.style.borderRadius = '10px';
-    popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-    popup.innerHTML = message + "<br><br><p style='text-align: center;color: black;'>Click anywhere to close.</p>";
-    document.body.appendChild(popup);
-    overlay.onclick = function() {
-        document.body.removeChild(popup);
-        document.body.removeChild(overlay);
-    };
+function scrollToId(id) {
+    const element = document.getElementById(id);
+    let url = window.location.href;
+    if (!element) {
+        window.open(url.substring(0, url.indexOf("newwebsite") + "newwebsite".length) + "/index.html", "_self");
+    }
+    window.scrollTo({ top: element.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
 }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../pages/pages.css">
+    <link rel="stylesheet" href="../languages.css">
+    <link rel="icon" type="image/x-icon" href="../../../img/sc-small.png">
+    <title>SmathyCo | Learn</title>
+</head>
+<body>
+    <nav style="top: 0;">
+        <ul>
+            <li style="margin-right: 20%;"><a href="../../search.html">Learn</a></li>
+            <li><a href="../../../index.html">Home</a></li>
+            <li style="margin-left: 20%;"><a onclick="scrollToId('contact')">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="main-title">
+        <p class="p1" style="padding-top: 200px;">Make</p>
+    </section>
+    <section class="container" style="margin-bottom: 100px;">
+        <h2>Welcome to Makefile Tutorial</h2>
+        <p>Makefile is a build automation tool used to compile and build software projects. Let's get started!</p>
+        <div class="step">
+            <h3>Introduction to Makefile</h3>
+            <p>A Makefile is a script consisting of rules that describe how to build a software project. It specifies dependencies between source files and the commands needed to compile them.</p>
+        </div>
+        <div class="step">
+            <h3>Writing Your First Makefile</h3>
+            <p>Let's start with a simple example of a Makefile to compile a C program:</p>
+            <div class="code">
+                <pre><code>
+# Makefile to compile a C program
+CC = gcc
+CFLAGS = -Wall -Wextra
+
+program: program.o
+$(CC) $(CFLAGS) -o program program.o
+
+program.o: program.c
+$(CC) $(CFLAGS) -c program.c
+
+clean:
+rm -f program program.o
+                </code></pre>
+            </div>
+            <p>This Makefile compiles a C program named "program".</p>
+        </div>
+        <div class="step">
+            <h3>Basic Makefile Syntax</h3>
+            <p>A Makefile consists of rules in the form of "target: prerequisites" followed by commands. Targets are usually filenames representing the output of a build process.</p>
+            <!-- Add content for basic syntax -->
+        </div>
+        <div class="step">
+            <h3>Variables in Makefile</h3>
+            <p>Makefiles can use variables to store values such as compiler options, file names, and flags. This allows for easier customization and maintenance of the build process.</p>
+            <!-- Add content for variables -->
+        </div>
+        <div class="step">
+            <h3>Rules and Dependencies</h3>
+            <p>Makefiles define rules to build targets based on their dependencies. If a dependency is newer than the target, the commands associated with the rule are executed to update the target.</p>
+            <!-- Add content for rules and dependencies -->
+        </div>
+        <div class="step">
+            <h3>Phony Targets</h3>
+            <p>Phony targets are targets that do not represent files and are used to group related tasks or perform actions like cleaning up temporary files.</p>
+            <!-- Add content for phony targets -->
+        </div>
+        <div class="step">
+            <h3>Automatic Variables</h3>
+            <p>Makefiles provide a set of automatic variables that can be used in commands to refer to elements like target name, prerequisites, and recipe.</p>
+            <!-- Add content for automatic variables -->
+        </div>
+        <div class="step">
+            <h3>Conditional Statements</h3>
+            <p>Makefiles support conditional statements like "if", "ifdef", and "ifeq" to conditionally execute commands based on predefined conditions.</p>
+            <!-- Add content for conditional statements -->
+        </div>
+        <div class="step">
+            <h3>Error Handling</h3>
+            <p>Makefiles can handle errors using conditional statements and built-in mechanisms like the "@" prefix to suppress error messages.</p>
+            <!-- Add content for error handling -->
+        </div>
+        <div class="step">
+            <h3>Further Learning</h3>
+            <p>Makefiles are a powerful tool for managing complex build processes. You can explore advanced topics like pattern rules, recursive make, and integration with version control systems.</p>
+            <p>Happy building with Makefile!</p>
+            <!-- Add content for further learning -->
+        </div>
+    </section>
+    <footer class="footer" style="margin-top: -65px;">
+        <p class="rights">© 2024 SmathyCo. All rights reserved.</p>
+    </footer>
+</body>
+<script src="../../../index.js"></script>
+<script src="../../search.js"></script>
+</html>

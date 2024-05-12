@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../pages/pages.css">
+    <link rel="stylesheet" href="../languages.css">
+    <link rel="icon" type="image/x-icon" href="../../../img/sc-small.png">
+    <title>SmathyCo | Learn</title>
+</head>
+<body>
+    <nav style="top: 0;">
+        <ul>
+            <li style="margin-right: 20%;"><a href="../../search.html">Learn</a></li>
+            <li><a href="../../../index.html">Home</a></li>
+            <li style="margin-left: 20%;"><a onclick="scrollToId('contact')">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="main-title">
+        <p class="p1" style="padding-top: 200px;">D</p>
+    </section>
+    <section class="container" style="margin-bottom: 100px;">
+        <h2>Welcome to D Programming Tutorial</h2>
+        <p>D is a systems programming language with C-like syntax and static typing. Let's explore the basics!</p>
+        <div class="step">
+            <h3>Getting Started with D</h3>
+            <p>To start programming in D, you'll need a D compiler installed on your system. DMD (Digital Mars D) is the most commonly used compiler for D programming.</p>
+        </div>
+        <div class="step">
+            <h3>Your First D Program</h3>
+            <p>Let's write a simple "Hello, World!" program:</p>
+            <div class="code">
+                <pre><code>
+import std.stdio;
+
+void main()
+{
+writeln("Hello, World!");
+}
+                </code></pre>
+            </div>
+            <p>Save this code in a file with a .d extension, such as hello.d. Then, compile and execute it:</p>
+            <div class="code">
+                <pre><code>
+dmd hello.d -of=hello
+./hello
+                </code></pre>
+            </div>
+            <p>You should see the output:</p>
+            <div class="code">
+                <pre><code>
+Hello, World!
+                </code></pre>
+            </div>
+        </div>
+        <div class="step">
+            <h3>Basic Syntax</h3>
+            <p>D syntax is similar to other C-style languages. It includes statements, variables, data types, functions, and more. Here are some essential syntax rules:</p>
+            <!-- Content for Basic Syntax -->
+        </div>
+        <div class="step">
+            <h3>Functions and Procedures</h3>
+            <p>Functions in D are defined using the `void` keyword for procedures and specify the return type for functions. They can have parameters and a function body.</p>
+            <!-- Content for Functions and Procedures -->
+        </div>
+        <div class="step">
+            <h3>Modules and Imports</h3>
+            <p>D programs are organized into modules, which are files containing code. You can import modules using the `import` keyword to use their functionality in your program.</p>
+            <!-- Content for Modules and Imports -->
+        </div>
+        <div class="step">
+            <h3>Arrays and Slices</h3>
+            <p>D provides arrays and slices for working with collections of elements. Arrays have a fixed size, while slices are dynamically sized views into arrays or other data structures.</p>
+            <!-- Content for Arrays and Slices -->
+        </div>
+        <div class="step">
+            <h3>Object-Oriented Programming (OOP)</h3>
+            <p>D supports object-oriented programming (OOP) concepts like classes, interfaces, inheritance, and polymorphism, allowing you to write modular and reusable code.</p>
+            <!-- Content for Object-Oriented Programming -->
+        </div>
+        <div class="step">
+            <h3>Further Learning</h3>
+            <p>D is a versatile language suitable for various types of projects, including system programming, web development, and scientific computing. Explore online resources, tutorials, and books to master D programming.</p>
+            <p>Happy coding with D!</p>
+            <!-- Content for Further Learning -->
+        </div>
+    </section>
+    <footer class="footer" style="margin-top: -65px;">
+        <p class="rights">© 2024 SmathyCo. All rights reserved.</p>
+    </footer>
+</body>
+<script src="../../../index.js"></script>
+<script src="../../search.js"></script>
+</html>
