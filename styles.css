@@ -102,4 +102,7 @@ nav {
     .logo {
         width: 250px;
     }
+    .footer .rights {
+        padding: 3%;
+    }
 }
