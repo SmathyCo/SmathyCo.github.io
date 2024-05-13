@@ -13,13 +13,14 @@ ul {
 }
 
 li a {
+    transition: linear 0.2s;
     text-decoration: none;
     color: white;
     font-weight: bold;
     cursor: pointer;
 }
 
-li a:hover {
+nav ul li a:hover {
     transition: linear 0.2s;
     color: gray;
 }

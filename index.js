@@ -21,12 +21,30 @@ function toggleNavColor() {
         return navbarRect.top >= msRect.bottom;
     }
     if (!isNavbarOverMs()) {
+        navbar.classList.remove('black');
         elements.forEach(element => {
             element.style.color = "white";
+            element.addEventListener("mouseover", function() {
+                this.style.transition = "color linear 0.2s";
+                this.style.color = "gray";
+            });
+            element.addEventListener("mouseout", function() {
+                this.style.transition = "color linear 0.2s";
+                this.style.color = "";
+            });
         });
     } else {
+        navbar.classList.add('black');
         elements.forEach(element => {
             element.style.color = "black";
+            element.addEventListener("mouseover", function() {
+                this.style.transition = "color linear 0.2s";
+                this.style.color = "gray";
+            });
+            element.addEventListener("mouseout", function() {
+                this.style.transition = "color linear 0.2s";
+                this.style.color = "black";
+            });
         });
     }
 }
