@@ -109,3 +109,23 @@ nav {
         padding: 3%;
     }
 }
+
+.sign-up-button {
+    display: inline-block;
+    margin: 10px;
+}
+.sign-up-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.sign-up-button:hover {
+    background-color: #0056b3;
+}
