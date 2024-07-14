@@ -1,4 +1,4 @@
-<img></img>
+<img src="img/sc-large.png"></img>
 <h2>SmathyCo Website</h2>
 <h6>Open source!</h6>
 
