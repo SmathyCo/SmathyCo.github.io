@@ -42,20 +42,61 @@ nav {
 }
 
 .plan {
-    transition: ease 0.3s;
-    text-align: center;
-    width: 35%;
-    cursor: pointer;
+  margin: 50px auto;
+  width: 400px;
+  height: 400px;
+  max-width: calc(100% - 60px);
+  background: #fffbaf;
+  position: relative;
+  border: 2px solid #111;
+  border-radius: 30px;
+}
+
+.plan::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 20px;
+  left: 20px;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    45deg,
+    #d4c481,
+    #d4c481 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  transition: all 0.3s ease;
+}
+
+.plan + .plan {
+  border-radius: 30px;
+  height: 400px;
+}
+
+.plan:hover::before {
+  top: 40px;
+  left: 40px;
+}
+
+.plan + .plan:hover::before {
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  top: -20px;
+  left: -20px;
 }
 
 .plan .p {
     font-size: 25px;
     font-weight: bold;
+    text-align: center;
 }
 
-.plan:hover {
-    transition: ease 0.3s;
-    transform: translateY(-5px);
+.plan .i {
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .about .title, .contactus .title {
@@ -101,52 +142,126 @@ nav {
     margin-bottom: 10px;
 }
 
-.comment2 {
-    text-align: right;
-}
-
 .comment2img {
-    width: 400px;
-}
-
-.comment1img {
-    width: 400px;
+    width: 900px;
 }
 
 .hashtag {
     margin-top: -7px;
+    margin-right: 25%;
+    margin-left: -25%;
+}
+
+.cmt2 {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.socialmedias {
+    position: absolute;
+    margin-top: 30vh;
+    margin-left: 25px;
+}
+
+.p2 {
+    margin-left: 25%;
 }
 
 @media only screen and (max-width: 414px) and (max-height: 896px) {
+    body {
+        max-width: 414px;
+        max-height: 896px;
+    }
+
     .logo {
         width: 250px;
     }
+
     .footer .rights {
         padding: 3%;
     }
+
     .mainSection {
         width: 100%;
         height: 100vh;
     }
+
     ul {
         width: 100vw;
     }
+
     .comment2 {
         text-align: center;
     }
+
     .comment2img {
         margin-top: 100px;
         width: 300px;
     }
+    
     .comment1img {
         width: 300px;
     }
+
     .plan {
         border: solid 1px black;
         border-radius: 50px;
     }
+
     .hashtag {
         margin-top: -25px;
+    }
+
+    .cmt2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .p2 {
+        margin-left: 5vw;
+    }
+
+    .plan {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 400px;
+      height: fit-content;
+      background: #fffbaf;
+      position: relative;
+      border: 2px solid #111;
+      border-radius: 30px;
+      box-sizing: border-box; /* Ensures padding and border are included in width */
+    }
+  
+    .plan::before {
+      top: 10px;
+      left: 10px;
+    }
+  
+    .plan:hover::before {
+      top: 20px;
+      left: 20px;
+    }
+  
+    .plan + .plan {
+      height: fit-content;
+    }
+  
+    .plan .p {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    .plan .i {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .socialmedias {
+        margin-top: 60vh;
     }
 }
 
@@ -166,6 +281,28 @@ nav {
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
+
 .sign-up-button:hover {
     background-color: #0056b3;
+}
+
+.socialmediacircle {
+    transition: ease 0.5s;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.socialmediacircle:hover {
+    transition: ease 0.5s;
+    transform: scale(1.1);
+}
+
+.twop {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }
