@@ -50,6 +50,7 @@ nav {
   position: relative;
   border: 2px solid #111;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 .plan::before {

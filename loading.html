@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./loading.css">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="img/filled.png">
+    <title>Loading...</title>
 </head>
 <body>
     <script>
         window.onload = function() {
-          // Retrieve the redirect URL from the URL parameters
           var params = new URLSearchParams(window.location.search);
           var redirectUrl = params.get('redirectUrl');
     
-          // Wait for 3 seconds and then redirect
           setTimeout(function() {
             window.location.href = redirectUrl;
-          }, 3000); // 3000 milliseconds = 3 seconds
+          }, 3000);
         };
     </script>
     <div class="box-of-star1">

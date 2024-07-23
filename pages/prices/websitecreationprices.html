@@ -6,20 +6,9 @@
     <title>SmathyCo | Website Creation Prices</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="icon" type="image/x-icon" href="../../img/filled.png">
+    <link rel="stylesheet" href="websitecreationprices.css">
 </head>
 <body>
-    <style>
-        .price {
-            background-color: rgba(207, 207, 207, 0.63);
-            border-radius: 10px;
-            width: 200px;
-            box-shadow: black 0px 0px 3px 0.1px;
-        }
-        .madeyourchoice:hover {
-            transition: ease 0.1s;
-            box-shadow: black 0px 0px 3px 0.1px;
-        }
-    </style>
     <nav style="top: 0;">
         <ul>
             <li style="margin-right: 20%;"><a href="../../learn/search.html" style="color: black;">Learn</a></li>
@@ -30,47 +19,165 @@
     <div style="text-align: center;margin-top: 100px;">
         <img src="../../img/filled.png" alt="" width="100px">
     </div>
-    <div style="text-align: center;margin-top: 150px;">
-        <div style="display: inline-block;" class="price">
-            <p style="float: right;margin-top: -40px;transform: rotate(5deg);margin-right: -50px;">Eco-friendly</p>
-            <p style="font-weight: bold;font-size: 20px;">Economic</p>
-            <p>Single page</p>
-            <p>$19.99 - $29.99</p>
+    <div style="display: flex;justify-content: center;margin-top: 50px;">
+        <div class="plan1">
+            <div class="inner">
+                <span class="pricing">
+                    <span>
+                        <small>$499 - $999</small>
+                    </span>
+                </span>
+                <p class="title">Tiny Business</p>
+                <p class="info">This service is often purchased by small businesses to store information and attract more clients.</p>
+                <ul class="features">
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <span><strong>Easy</strong> navigation</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <strong>Performant</strong> <span>website</span>
+                    </li>
+                </ul>
+                <div class="action">
+                <a class="button" onclick="goLoading('../../openingmails.html', 'mailto:SmathyCo@gmail.com?subject=Inquiry%20about%20Tiny%20Business%20Plan&body=Dear%20SmathyCo%20Team,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20your%20Tiny%20Business%20Plan.%20Could%20you%20please%20provide%20me%20with%20details%20regarding%20features,%20pricing,%20and%20suitability%20for%20small%20businesses%3F%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]')">
+                    Send
+                </a>
+                </div>
+            </div>
         </div>
-        <div style="display: inline-block;margin-left: 25vh;margin-right: 25vh;height: 100%;padding: 20px;" class="price">
-            <p style="float: right;margin-top: -70px;transform: rotate(5deg);margin-right: -80px;font-size: 22.5px;">Most popular</p>
-            <p style="font-weight: bold;font-size: 22px;">Normal</p>
-            <p>Multiple pages</p>
-            <p>$39.99 - $59.99</p>
+        <div style="width: 50px;"></div>
+        <div class="plan1">
+            <div class="inner">
+                <span class="pricing">
+                    <span>
+                        <small>$999 - $9999</small>
+                    </span>
+                </span>
+                <p class="title">Normal</p>
+                <p class="info">This service is typically chosen by standard businesses looking to manage operations efficiently and attract a wider customer base.</p>
+                <ul class="features">
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <span><strong>Easy</strong> navigation</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <strong>Performant</strong> <span>website</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <span><strong>Multi-page</strong> website</span>
+                    </li>
+                </ul>
+                <div class="action">
+                <a class="button" onclick="goLoading('../../openingmails.html', 'mailto:SmathyCo@gmail.com?subject=Inquiry%20about%20Normal%20Plan&body=Dear%20SmathyCo%20Team,%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20your%20Normal%20Plan.%20Could%20you%20please%20provide%20me%20with%20details%20regarding%20features,%20pricing,%20and%20availability%3F%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]')">
+                    Send
+                </a>
+                </div>
+            </div>
         </div>
-        <div style="display: inline-block;" class="price">
-            <p style="font-weight: bold;font-size: 20px;">Premium</p>
-            <p>Multiple pages</p>
-            <p>$99.99+</p>
+        <p style="font-size: 25px;position: absolute;margin-top: -25px;margin-right: -280px;transform: rotate(5deg);font-weight: bold;">Most popular</p>
+        <div style="width: 50px;"></div>
+        <div class="plan1">
+            <div class="inner">
+                <span class="pricing">
+                    <span>
+                        <small>$49 999 - $99 999 +</small>
+                    </span>
+                </span>
+                <p class="title">Premium</p>
+                <p class="info">Discover our premium service designed for complex projects and large businesses.</p>
+                <ul class="features">
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <span><strong>Easy</strong> navigation</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <strong>Performant</strong> <span>website</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <span><strong>Multi-page</strong> website</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path fill="currentColor" d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"></path>
+                            </svg>
+                        </span>
+                        <span><strong>Server-side</strong> website</span>
+                    </li>
+                </ul>
+                <div class="action">
+                <a class="button" onclick="goLoading('../../openingmails.html', 'mailto:SmathyCo@gmail.com?subject=New%20Client&body=Dear%20SmathyCo%20Team,%0D%0A%0D%0AI%20am%20interested%20in%20purchasing%20a%20Premium%20plan%20for%20my%20business.%20Could%20you%20please%20provide%20me%20with%20more%20information%20about%20your%20services%20and%20pricing%3F%0D%0A%0D%0AThank%20you.%0D%0A%0D%0ABest%20regards,%0D%0A[Your%20Name]')">
+                    Send
+                </a>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div style="text-align: right;margin-top: 250px;margin-right: 200px;">
-        <a href="mailto:SmathyCo@gmail.com"><img src="../../img/Made your choice.png" alt="" width="300px" style="border-radius: 10px;" class="madeyourchoice"></a>
+    <div style="text-align: center; margin-top: 250px;">
+    <div style="display: flex; justify-content: center; align-items: flex-start;">
+        <a href="mailto:SmathyCo@gmail.com" style="text-decoration: none;" class="madeyourchoice">
+            <img src="../../img/Made your choice.png" alt="Made your choice" width="300px" style="border-radius: 10px;">
+        </a>
+        <p style="margin-left: 30px; max-width: 200px; text-align: left; margin-top: 30px;">
+            Contact us to learn more about our plans, the process, and who will be handling it.
+        </p>
     </div>
+</div>
 
     <div style="margin-top: 300px;">
         <p style="text-align: center;font-size: 25px;margin-bottom: 50px;">About Plans</p>
-        <div style="width: 600px;margin-left: 25px;">
-            <p style="font-size: 20px;">Economic plan</p>
-            <p>Single page websites are created with a focus on user experience and ease of use. They're designed to be easy to navigate and engage with, with minimal design elements. The website is built using modern web technologies and optimized for performance.</p>
-        </div>
-        <div style="margin-left: auto;margin-right: 25px;width: 600px;">
-            <p style="font-size: 20px;">Normal plan</p>
-            <p>Our Normal Plan is ideal for most companies, providing an excellent solution for both informational and e-commerce websites. This plan is designed to cater to a wide range of business needs, making it the most popular service we offer. With the Normal Plan, you'll get a professional, user-friendly website that effectively showcases your products or services, helping you reach your business goals.</p>
-        </div>
-        <div style="margin-left: 25px;width: 600px;">
-            <p style="font-size: 20px;">Premium plan</p>
-            <p>Our Premium Plan is targeted at large companies needing a high-end website for the management of extensive information and specialized purposes. It's perfect for any business demand that requires rich server-side capabilities and very advanced features. Whether it's large-scale data management, complex functionalities, or just heavy traffic to your site, the Premium Plan has enterprise-grade scalability and performance to match your business. Get seamless power in this web presence, designed to support and boost your business processes.</p>
-        </div>
+        <p style="text-align: center;">For any plan you choose, we don't publish the website for you, all we do is code it. We can altough help you publish it.</p>
     </div>
     <footer class="footer" style="margin-top: 150px;">
         <p class="rights">© 2024 SmathyCo. All rights reserved.</p>
     </footer>
 </body>
+<script src="../../index.js"></script>
 </html>

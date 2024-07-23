@@ -52,6 +52,5 @@ function toggleNavColor() {
 window.addEventListener('scroll', toggleNavColor);
 
 function goLoading(x, y) {
-    // Redirect to loading.html with x as a URL parameter
     window.location.href = x + '?redirectUrl=' + encodeURIComponent(y);
 }
