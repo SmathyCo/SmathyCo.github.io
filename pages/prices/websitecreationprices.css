@@ -119,7 +119,7 @@ body {
     justify-content: end;
 }
   
-.plan1 .button {
+.plan1 .send {
     background-color: #6558d3;
     border-radius: 6px;
     color: #fff;
@@ -133,6 +133,6 @@ body {
     text-decoration: none;
 }
   
-.plan1 .button:hover, .plan .button:focus {
+.plan1 .send:hover, .plan .send:focus {
     background-color: #4133B7;
 }
