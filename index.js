@@ -57,12 +57,14 @@ function goLoading(x, y) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('myButton');
-    if (button) {
+    const detectMob = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (detectMob === true && button) {
         button.remove();
     }
     window.addEventListener('scroll', function() {
         const msSection = document.getElementById('ms');
-        if (msSection && !isElementInViewport(msSection)) {
+        const detectMobOnScroll = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (detectMobOnScroll === false && msSection && !isElementInViewport(msSection)) {
             if (button && !document.body.contains(button)) {
                 document.body.appendChild(button);
             }
@@ -80,5 +82,63 @@ document.addEventListener('DOMContentLoaded', function() {
             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
+    }
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    const detectMob = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (detectMob === true) {
+        const maxWidth = 768;
+        function adjustCardPosition() {
+            const cards = document.querySelectorAll('.card');
+            const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+            cards.forEach(function(card) {
+                if (windowWidth <= maxWidth) {
+                    card.style.marginLeft = 'auto';
+                    card.style.marginRight = 'auto';
+                    card.style.marginBottom = '100px'
+                } else {
+                    card.style.marginLeft = '';
+                    card.style.marginRight = '';
+                }
+            });
+            const socialMedias = document.querySelectorAll('.socialmedias');
+            socialMedias.forEach(function(socialMedias) {
+                if (windowWidth <= maxWidth) {
+                    socialMedias.style.marginTop = '55vh';
+                }
+            });
+            const displayPrices = document.querySelectorAll('#displayPrices');
+            const plan1 = document.querySelectorAll('.plan1');
+            const aboutChoice = document.querySelectorAll('#aboutChoice');
+            const mostPopular = document.querySelectorAll('#mostPopular');
+            const forPlan = document.querySelectorAll('#forPlan');
+            displayPrices.forEach(function(displayPrices) {
+                plan1.forEach(function(plan1) {
+                    aboutChoice.forEach(function(aboutChoice) {
+                        mostPopular.forEach(function(mostPopular) {
+                            forPlan.forEach(function(forPlan) {
+                                if (windowWidth <= maxWidth) {
+                                    displayPrices.style.display = 'block';
+                                    displayPrices.style.justifyContent = '';
+                                    plan1.style.marginLeft = 'auto';
+                                    plan1.style.marginRight = 'auto';
+                                    plan1.style.marginBottom = '100px';
+                                    aboutChoice.remove();
+                                    mostPopular.style.marginRight = '';
+                                    mostPopular.style.marginLeft = '150px';
+                                    mostPopular.style.transform = '';
+                                    forPlan.style.width = '300px';
+                                    forPlan.style.marginLeft = 'auto';
+                                    forPlan.style.marginRight = 'auto';
+                                }
+                            });
+                        });
+                    });
+                });
+            });
+        }
+        adjustCardPosition();
+        window.addEventListener('resize', adjustCardPosition);
     }
 });
