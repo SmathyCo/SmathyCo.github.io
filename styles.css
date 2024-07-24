@@ -107,7 +107,7 @@ nav {
 .about, .contactus {
     text-align: center;
     margin-top: 100px;
-    margin-bottom: 200px;
+    margin-bottom: 250px;
 }
 
 .about .text, .contactus .text {
@@ -143,19 +143,10 @@ nav {
     margin-bottom: 10px;
 }
 
-.comment2img {
-    width: 900px;
-}
-
 .hashtag {
     margin-top: -7px;
     margin-right: 25%;
     margin-left: -25%;
-}
-
-.cmt2 {
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
 .socialmedias {
@@ -166,6 +157,99 @@ nav {
 
 .p2 {
     margin-left: 25%;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+}
+
+.btn svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn:hover svg {
+    transform: translateX(5px) rotate(90deg);
+}
+
+.btn:hover span {
+    transform: translateX(7px);
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+  
+.svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+}
+  
+.svgIcon path {
+    fill: white;
+}
+  
+.button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(181, 160, 255);
+    align-items: center;
+}
+  
+.button:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+}
+  
+.button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    /* transition-duration: .3s; */
+    font-size: 0px;
+}
+  
+.button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
 }
 
 @media only screen and (max-width: 414px) and (max-height: 896px) {
@@ -191,19 +275,6 @@ nav {
         width: 100vw;
     }
 
-    .comment2 {
-        text-align: center;
-    }
-
-    .comment2img {
-        margin-top: 100px;
-        width: 300px;
-    }
-    
-    .comment1img {
-        width: 300px;
-    }
-
     .plan {
         border: solid 1px black;
         border-radius: 50px;
@@ -211,11 +282,6 @@ nav {
 
     .hashtag {
         margin-top: -25px;
-    }
-
-    .cmt2 {
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
