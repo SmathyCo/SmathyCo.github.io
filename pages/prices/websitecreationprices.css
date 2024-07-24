@@ -131,6 +131,7 @@ body {
     width: 100%;
     padding: 0.625em 0.75em;
     text-decoration: none;
+    cursor: pointer;
 }
   
 .plan1 .send:hover, .plan .send:focus {

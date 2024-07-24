@@ -23,7 +23,22 @@
             <img class="disc" onclick="openFile('https:/\/discord.gg/8VaQWZtmua')" style="margin-top: 25px;cursor: pointer;" src="../img/discordicon.png" alt="">
             <a href="mailto:SmathyCo@gmail.com"><img class="disc2" height="50px" src="../img/emailinvert.png" alt="Email" style="cursor: pointer;margin-left: 10px;"></a>
         </div>
-        <a href="prices/websitecreationprices.html"><button class="sign-up-button" style="height: 50px;width: 200px;margin-top: 70px;">Prices</button></a>
+        <a href="prices/websitecreationprices.html"><button class="c-button c-button--gooey" style="margin-top: 70px;"> Prices
+            <div class="c-button__blobs">
+            <div></div>
+            <div></div>
+            <div></div>
+            </div>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: block; height: 0; width: 0;">
+            <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                <feBlend in="SourceGraphic" in2="goo"></feBlend>
+            </filter>
+            </defs>
+        </svg></a>
     </section>
     <footer class="footer" style="margin-top: -65px;">
         <p class="rights">© 2024 SmathyCo. All rights reserved.</p>
