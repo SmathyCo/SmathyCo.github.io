@@ -65,7 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const msSection = document.getElementById('ms');
         const detectMobOnScroll = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         if (detectMobOnScroll === false && msSection && !isElementInViewport(msSection)) {
-            if (button && !document.body.contains(button)) {
+            if (button && !d-
+            
+            
+            
+            
+            ocument.body.contains(button)) {
                 document.body.appendChild(button);
             }
         } else {
@@ -105,7 +110,7 @@ window.addEventListener('DOMContentLoaded', function() {
             const socialMedias = document.querySelectorAll('.socialmedias');
             socialMedias.forEach(function(socialMedias) {
                 if (windowWidth <= maxWidth) {
-                    socialMedias.style.marginTop = '55vh';
+                    socialMedias.style.marginTop = '48vh';
                 }
             });
             const displayPrices = document.querySelectorAll('#displayPrices');
@@ -133,6 +138,26 @@ window.addEventListener('DOMContentLoaded', function() {
                                     forPlan.style.marginRight = 'auto';
                                 }
                             });
+                        });
+                    });
+                });
+            });
+
+            const div1 = document.querySelectorAll('#div1');
+            const div2 = document.querySelectorAll('#div2');
+            const rights = document.querySelectorAll('#rights');
+            const footer = document.querySelectorAll('#footer');
+            div1.forEach(function(div1) {
+                div2.forEach(function(div2) {
+                    rights.forEach(function(rights) {
+                        footer.forEach(function(footer) {
+                            if (windowWidth <= maxWidth) {
+                                div1.remove();
+                                div2.remove();
+                                rights.style.padding = '0';
+                                rights.style.paddingBottom = '50px';
+                                footer.style.textAlign = 'center';
+                            }
                         });
                     });
                 });

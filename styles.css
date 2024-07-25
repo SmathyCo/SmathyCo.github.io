@@ -61,13 +61,15 @@ nav {
 }
 
 .footer {
-    background-color: rgb(165, 165, 165);
-    height: 48px;
+    background-color: hsl(180deg 5.88% 10%);
+    height: calc(100% + 100px);
 }
 
 .footer .rights {
     text-align: center;
     padding: 1%;
+    color: white;
+    margin-bottom: 0;
 }
 
 .disc2 {
