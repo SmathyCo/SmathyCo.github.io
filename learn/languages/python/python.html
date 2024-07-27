@@ -89,8 +89,37 @@ print("Hello, World!")
             <!-- Add content for further learning -->
         </div>
     </section>
-    <footer class="footer" style="margin-top: -65px;">
-        <p class="rights">© 2024 SmathyCo. All rights reserved.</p>
+    <footer class="footer" style="padding-top: 50px;" id="footer">
+        <div style="display: flex;justify-content: center;" id="div1">
+            <div style="margin-top: 45px;">
+                <img onclick="openFile('index.html')" src="../../../img/smathyco.png" width="200px" alt="SmathyCo">
+            </div>
+            <div style="margin-left: 150px;margin-right: 350px;text-align: left;">
+                <p style="color: white;font-weight: bold;font-size: 17px;">Get Something Done</p>
+                <p onclick="openFile('pages/websitecreation.html')" style="color: white;cursor: pointer;">Website Creation</p>
+                <p onclick="openFile('pages/softwarecreation.html')" style="color: white;cursor: pointer;">Software Creation</p>
+                <p onclick="openFile('pages/codecreation.html')" style="color: white;cursor: pointer;">Code Creation</p>
+            </div>
+            <div>
+                <div style="margin-bottom: -15px;">
+                    <a href="https://www.instagram.com/SmathyCo/"><img width="40px" src="../../../img/igin.png" alt="Instagram" style="margin-right: 20px;border: solid 1px white;border-radius: 50%;padding: 3px;"></a>
+                </div>
+                <br>
+                <div style="margin-bottom: -15px;">
+                    <a href="https://www.linkedin.com/company/smathyco/"><img width="40px" src="../../../img/inin.png" alt="LinkedIn" style="margin-right: 20px;border: solid 1px white;border-radius: 50%;padding: 3px;"></a>
+                </div>
+                <br>
+                <div style="margin-bottom: -15px;">
+                    <a href="https://github.com/SmathyCo"><img width="40px" src="../../../img/ghin.png" alt="Github" style="margin-right: 20px;border: solid 1px white;border-radius: 50%;padding: 3px;"></a>
+                </div>
+                <br>
+                <div style="margin-bottom: 30px;">
+                    <a href="https://discord.gg/9xPhnsb5EK"><img width="40px" src="../../../img/dcin.png" alt="Discord" style="margin-right: 20px;border: solid 1px white;border-radius: 50%;padding: 3px;"></a>
+                </div>
+            </div>
+        </div>
+        <div id="div2" style="width: 75%;height: 1px;background-color: white;margin-left: auto;margin-right: auto;"></div>
+        <p class="rights" id="rights" style="padding-bottom: 100px;">© 2024 SmathyCo. All rights reserved.</p>
     </footer>
 </body>
 <script src="../../../index.js"></script>

@@ -41,11 +41,17 @@ nav {
     text-align: center;
 }
 
+.about.show {
+    opacity: 1;
+}
+
 .about .title, .contactus .title {
     font-size: 30px;
 }
 
 .about, .contactus {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
     text-align: center;
     margin-top: 100px;
     margin-bottom: 250px;
@@ -58,6 +64,10 @@ nav {
 
 .contactus {
     margin-top: 250px;
+}
+
+.contactus.show {
+    opacity: 1;
 }
 
 .footer {
@@ -305,6 +315,8 @@ nav {
 }
 
 .card {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
     display: block;
     position: relative;
     max-width: 300px;
@@ -318,6 +330,10 @@ nav {
     overflow: hidden;
     background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.card.show {
+    opacity: 1;
 }
 
 .card:before {
@@ -347,6 +363,11 @@ nav {
 .card:hover .card-title {
     transition: all 0.5s ease-out;
     color: #ffffff;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @media only screen and (max-width: 414px) and (max-height: 896px) {

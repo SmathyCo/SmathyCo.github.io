@@ -167,3 +167,31 @@ window.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', adjustCardPosition);
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const titleElements = document.querySelectorAll('.about');
+    const titleElements2 = document.querySelectorAll('.card');
+    const titleElements3 = document.querySelectorAll('.contactus');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    titleElements.forEach(element => {
+        observer.observe(element);
+    });
+    titleElements2.forEach(element => {
+        observer.observe(element);
+    });
+    titleElements3.forEach(element => {
+        observer.observe(element);
+    });
+});
