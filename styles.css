@@ -13,13 +13,36 @@
     src: url(./inter.ttf);
 }
 
+@keyframes gdScafadeIn {
+    0%{opacity:0;scale:0}
+    80%{scale:1.2}
+}
+
+@keyframes show {
+    0%{opacity:0}
+    100%{opacity:var(--target-show,1)}
+}
+
+@keyframes gdRotIn {
+    0%{rotate:var(--target-old-rotIn,-45deg);opacity:0;scale:0}
+    80% {scale:1.2}
+    100%{opacity:1;scale:1}
+}
+
 html, body, main, section {
     height: 100%;
+    position: relative;
+}
+
+html {
+    background: #222;
 }
 
 body {
     font-family: "Inter", system-ui;
     overflow: hidden;
+    opacity: 0;
+    animation: show 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.3s forwards;
 }
 
 .logofont {
@@ -76,6 +99,22 @@ main {
     display: grid;
     align-content: center;
     padding-left: 7%;
+}
+
+#home::before,
+#home::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    content: 'image: cottonbro studio @ pexels.com';
+    font-size: 0.7em;
+    color: #c1c1c1;
+}
+
+#home::before {
+    content: 'made by olafcio';
+    bottom: 20px;
 }
 
 #home > h1 {
@@ -141,6 +180,11 @@ main {
     user-select: none;
     cursor: default;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+#home > .cards > .card:not(.animd) {
+    animation: gdRotIn 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 1 0.3s forwards;
+    pointer-events: none;
 }
 
 #home > .cards:has(.card:hover) > .card:not(:hover) {
