@@ -14,16 +14,33 @@ addEventListener("load", () => {
     }, {passive: false});
 
     const html = document.documentElement;
+    addEventListener("resize", (function r() {
+        html.style.setProperty("--target-widthIn", html.offsetWidth + "px");
+        return r;
+    })(), true);
+
     var oST = html.scrollTop;
-    document.body.classList.toggle("scrolled", !!oST);
-    html.style.setProperty("--scrollY", oST + "px");
-    addEventListener("scroll", ev => {
+    const animElements = document.querySelectorAll(".animh");
+    addEventListener("scroll", (function s(ev) {
         if (ev.target === document) {
-            document.body.classList.toggle("shownav", html.scrollTop > oST);
+            var nowLower = html.scrollTop > oST;
+            document.body.classList.toggle("shownav", nowLower);
             oST = html.scrollTop;
             document.body.classList.toggle("scrolled", !!oST);
             html.style.setProperty("--scrollY", oST + "px");
+
+            animElements.forEach(el => {
+                if (el.classList.contains("anim"))
+                    el.classList.toggle("anim", el.offsetTop - html.scrollTop-1 < html.offsetHeight);
+                else
+                    el.classList.toggle("anim", el.offsetTop - html.scrollTop-1 + el.offsetHeight/2 < html.offsetHeight);
+            });
         }
+        return s;
+    })({target: document}), true);
+
+    addEventListener("animationend", ev => {
+        ev.target.classList.add("animended");
     }, true);
 
     no:
