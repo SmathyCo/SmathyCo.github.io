@@ -74,6 +74,10 @@ body {
     font-family: "Sacramento";
 }
 
+body.hidenav nav {
+    height: 0;
+}
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -86,6 +90,12 @@ nav {
     backdrop-filter: blur(7px);
     box-shadow: 0 0 5px 0 #0007;
     user-select: none;
+    height: 45px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+nav:not(.animended) {
     height: 0;
     --target-heightIn: 45px;
     animation: heightIn 0.3s cubic-bezier(0.215, 0.610, 0.355, 1) 0.5s forwards;
@@ -154,6 +164,10 @@ section > .line {
     /* width: 0;
     opacity: 1!important;
     animation: widthIn 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s forwards!important; */
+}
+
+body.hidenav #home {
+    height: 100%;
 }
 
 #home {
@@ -317,6 +331,7 @@ section.center p {
 footer {
     display: flex;
     color: #fff;
+    background: linear-gradient(180deg, #fff -1px, #0000 4px);
 }
 
 footer.anim > :not(:last-child) {
@@ -336,6 +351,7 @@ footer > * {
 
 footer > .right {
     margin-left: auto;
+    user-select: none;
 }
 
 footer img {

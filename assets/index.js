@@ -24,7 +24,7 @@ addEventListener("load", () => {
     addEventListener("scroll", (function s(ev) {
         if (ev.target === document) {
             var nowLower = html.scrollTop > oST;
-            document.body.classList.toggle("shownav", nowLower);
+            document.body.classList.toggle("hidenav", nowLower);
             oST = html.scrollTop;
             document.body.classList.toggle("scrolled", !!oST);
             html.style.setProperty("--scrollY", oST + "px");
