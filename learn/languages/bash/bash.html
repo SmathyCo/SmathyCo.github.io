@@ -68,7 +68,7 @@ echo "Hello, $NAME!"
             <div class="code">
                 <pre><code>
 greet() {
-echo "Hello, $1!"
+    echo "Hello, $1!"
 }
 greet "Alice"
                 </code></pre>
@@ -78,7 +78,43 @@ greet "Alice"
         <div class="step">
             <h3>File Operations</h3>
             <p>Bash scripts can perform various file operations such as creating, reading, writing, and deleting files using built-in commands and utilities.</p>
-            <!-- Add content for file operations -->
+            <pre><code>
+#!/bin/bash
+if [[ $1 == "-h" ]]; then
+    echo "Available commands:"
+    echo " $0 del - deletes the existing note"
+    echo " $0 edi - edits the existing note using Vim"
+    exit 0
+fi
+
+if [[ $1 == "del" ]]; then
+    rm .note
+    echo "Your note has been deleted."
+    exit 0
+fi
+
+if [[ $1 == "edi" ]]; then
+    vim .note
+    exit 0
+fi
+
+if [[ -f ".note" ]]; then
+    echo "Your note:"
+    cat .note
+else
+    echo ================ > .note
+    echo Name: New Note >> .note
+    echo Tags: >> .note
+    echo ================ >> .note
+    vim .note
+    echo "Your note has been saved."
+fi
+            </code></pre>
+            <p>This is a notes script written in Bash, I've created right now.</p>
+            <h4>Variables used</h4>
+            <p><code>$0</code> is the script path, <code>$1</code> is the first argument, and it's going like that.</p>
+            <h4>Commands used</h4>
+            <p><code>echo</code> prints text, <code>vim</code> is a file editor, <code>rm</code> is used for deleting files, <code>cat</code> is used for viewing files, and <code>exit 0</code> is used for exiting the program, with no error (0 is succesful).</p>
         </div>
         <div class="step">
             <h3>Command-Line Arguments</h3>
@@ -121,6 +157,11 @@ greet "Alice"
                     <li><a href="/">Home</a></li>
                     <li><a href="/learn/">Learn</a></li>
                     <li><a href="/pages/contact-us/">Contact us</a></li>
+                </ul>
+                <ul>
+                    <li><h3>Creators</h3></li>
+                    <li><a href="https://olafcio1.github.io">Olafcio</a></li>
+                    <li><a href="https://github.com/mathissparky">mathissparky</a></li>
                 </ul>
                 <ul class="right">
                     <li><a href="https://www.instagram.com/SmathyCo/"><img src="/img/i/ig.png"></a></li>

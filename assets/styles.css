@@ -53,6 +53,12 @@
     100% {transform:translateX(var(--target-fadeInLeft-t,0));opacity:var(--target-fadeInLeft-o,1)}
 }
 
+@keyframes bgXr {
+    0% {background-position-x:0}
+    50% {background-position-x:100%}
+    100% {background-position-x:0}
+}
+
 html, body, main {
     height: 100%;
     position: relative;
@@ -125,7 +131,8 @@ nav > ul a:hover {
 }
 
 main {
-    background: url(https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?cs=srgb&dl=pexels-cottonbro-4709289.jpg&fm=jpg) 0 / cover;
+    background-image: url(/img/programmerkid.jpg), url(https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?cs=srgb&dl=pexels-cottonbro-4709289.jpg&fm=jpg)!important;
+    background: #0000 0 / cover;
     background-attachment: fixed;
 }
 
@@ -216,7 +223,8 @@ section:first-of-type .logo {
 
 body.loaded #home > :is(h1, p) {
     opacity: 0;
-    animation: fadeInLeft 0.7s ease-in-out 0.4s forwards;
+    background-size: 400px;
+    animation: bgXr 2s linear 0.9s alternate infinite both, fadeInLeft 0.7s ease-in-out 0.4s forwards;
 }
 
 body.loaded #home > p {
@@ -405,7 +413,7 @@ a {
     box-shadow: inset -2px -2px 5px 0 #0003;
     background-clip: border-box;
     clip-path: inset(0% 0% 0% 0% round 8px);
-    border-image-source: url(https://cdn.vectorstock.com/i/500p/60/79/rainbow-background-pastel-color-abstract-pattern-vector-43916079.jpg);
+    border-image-source: /*url(/img/rainbow.jpg), */url(https://cdn.vectorstock.com/i/500p/60/79/rainbow-background-pastel-color-abstract-pattern-vector-43916079.jpg);
     border-image-slice: 40;
     border-image-repeat: stretch;
     position: absolute;
@@ -541,7 +549,37 @@ section.container p {
     margin-bottom: 2px;
 }
 
-section.container > a {
+section.container a:not(p a, span a) {
     display: block;
     margin-bottom: 2px;
+}
+
+section.container :is(p, span) code {
+    display: inline-block;
+    width: fit-content;
+}
+
+/* Learn main page */
+#learn {
+    background: #0000;
+    display: block;
+    text-align: left;
+    justify-items: normal;
+    align-content: normal;
+    padding-left: 0;
+}
+
+#learn > .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 40px;
+    background: #fff3;
+    box-shadow: 0 0 5px 0 #fff3;
+    backdrop-filter: blur(5px);
+}
+
+#learn > .topbar :is(input, .btn) {
+    border-radius: 0;
+    height: 30px;
 }

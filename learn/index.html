@@ -20,14 +20,21 @@
                     <li><a href="/pages/contact-us/">Contact us</a></li>
                 </ul>
             </nav>
-            <section id="creation" class="center">
-                <div class="rainbow child">
-                    <h1 class="logo logofont" style="display:inline-block" c="SmathyCo Learn">SmathyCo Learn</h1>
-                    <p>Learn about various programming languages!</p>
+            <section id="learn" class="center">
+                <div class="topbar">
+                    <h3>SmathyCo Learn</h3>
+                    <!-- <p>Learn about various programming languages!</p> -->
                     <div class="flex">
-                        <input id="search" type="search" placeholder="VBScript...">
-                        <button class="btn light" onclick="search()">Search</button>
+                        <input id="search" type="search" placeholder="Python...">
+                        <button class="btn light" id="searchbtn">Search for this language</button>
                     </div>
+                </div>
+                <div class="posts" style="padding:3% 10%">
+                    <p>No posts yet :(</p>
+                    <small style="font-size:0.7em">Posts will be soon fetched from Olafcio's website, and may also be added here.</small>
+                    <!-- <div class="post">
+                        <p>Creating a lesson</p>
+                    </div> -->
                 </div>
             </section>
             <section id="newsletter" class="center animh">
@@ -55,6 +62,11 @@
                     <li><a href="/learn/">Learn</a></li>
                     <li><a href="/pages/contact-us/">Contact us</a></li>
                 </ul>
+                <ul>
+                    <li><h3>Creators</h3></li>
+                    <li><a href="https://olafcio1.github.io">Olafcio</a></li>
+                    <li><a href="https://github.com/mathissparky">mathissparky</a></li>
+                </ul>
                 <ul class="right">
                     <li><a href="https://www.instagram.com/SmathyCo/"><img src="/img/i/ig.png"></a></li>
                     <li><a href="https://www.linkedin.com/company/smathyco/"><img src="/img/i/in.png"></a></li>
@@ -64,6 +76,6 @@
             </footer>
         </main>
         <script src="/assets/all.js" async defer></script>
-        <script src="/learn/search.js" async defer></script>
+        <script src="./index.js" async defer></script>
     </body>
 </html>

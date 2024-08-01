@@ -127,11 +127,35 @@ addEventListener("load", () => {
                         html += char;
                     }
                 }
+                if (html.endsWith(" "))
+                    html = html.trimEnd() + '<span style="border-radius:3px;background:#ff444488;margin-block:2px 4px;display:inline-block">' + "&nbsp;".repeat(html.length - html.trimEnd().length) + "</span>";
                 result.push(html + "</span>".repeat(spans));
             }
+            let instr = false;
             for (let line of lines) {
+                let ll = line.toLowerCase();
                 if (/^on (.*):/.test(line))
                     addLine("&6&l{}", line);
+                else if (instr) {
+                    if (line.includes('"') || line.includes("`"))
+                        instr = false;
+                    addLine("{}", line);
+                    continue;
+                } else if (/^command \/(.*):/.test(ll) ||
+                         /^def (.*)/.test(ll) ||
+                         /^function (.*)/.test(ll) ||
+                         /^fun (.*)/.test(ll) ||
+                         /^sub (.*)/.test(ll) ||
+                         /^module (.+)/.test(ll) ||
+                         /^end function|sub|module/.test(ll))
+                    addLine("&[color:#ffb666]&l{}", line);
+                else if (/^trigger:/.test(line.trim()) ||
+                         /^executable by: (.+)/.test(line.trim()) ||
+                         /^permission: (.+)/.test(line.trim()) ||
+                         /^permission message: (.*)/.test(line.trim()) ||
+                         /^cooldown: (.*)/.test(line.trim()) ||
+                         /^cooldown message: (.*)/.test(line.trim()))
+                    addLine("&[color:#ffb666]{}", line);
                 else if (/^#!(.+)/.test(line))
                     addLine("&7{}", line);
                 else if (/^[#|//]/.test(line.trim()))
@@ -139,6 +163,8 @@ addEventListener("load", () => {
                 // else if (/(.*)=(.*)/.test(line))
                 //     addLine("&[color:#1e90ff]&n{}");
                 else addLine("{}", line);
+                if ((line.indexOf('"') == line.lastIndexOf('"') && line.includes('"')) || (line.indexOf('`') == line.lastIndexOf('`') && line.includes('`')))
+                    instr = true;
             }
             var html = result.join("\n");
             for (let n in styles)
@@ -191,7 +217,5 @@ addEventListener("load", () => {
         for(let i = 0; i < 6; i++)
             get().append(sc.cloneNode(true));
         */
-       false;
-
-    //
+       "don't understand. no.";
 }, true);
