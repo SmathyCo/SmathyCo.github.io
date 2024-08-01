@@ -38,7 +38,7 @@
             <div class="code">
                 <pre><code>
 on join:
-send "Hello, World!" to player
+    send "Hello, World!" to player
                 </code></pre>
             </div>
             <p>This script sends "Hello, World!" to a player whenever they join the server.</p>
@@ -54,8 +54,8 @@ send "Hello, World!" to player
             <div class="code">
                 <pre><code>
 on player death:
-if victim is a player:
-    broadcast "%victim% died!"
+    if victim is a player:
+        broadcast "%victim% died!"
                 </code></pre>
             </div>
             <p>This script broadcasts a message when a player dies.</p>
