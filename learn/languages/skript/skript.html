@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Learn to use various programming languages.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/styles.css">
+    <title>Skript « SmathyCo Learn</title>
+</head>
+<body>
+    <main>
+        <nav id="navbar">
+            <div class="logo">
+                <h2 class="logofont">SmathyCo</h2>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/learn/">Learn</a></li>
+                <li><a href="/pages/contact-us/">Contact us</a></li>
+            </ul>
+        </nav>
+    <section class="main-title" id="ms">
+        <p class="p1">Skript</p>
+    </section>
+    <section class="container">
+        <h2>Welcome to Skript Tutorial</h2>
+        <p>Skript is a powerful scripting language used to create plugins for Minecraft servers running Bukkit/Spigot. Let's get started!</p>
+        <div class="step">
+            <h3>Introduction to Skript</h3>
+            <p>Skript is a scripting language that allows server administrators to customize gameplay on Minecraft servers without the need for extensive plugin development. It simplifies the process of creating custom features and functionality.</p>
+        </div>
+        <div class="step">
+            <h3>Setting Up Skript</h3>
+            <p>To use Skript, you need to have a Minecraft server running Bukkit or Spigot. Once your server is set up, you can install the Skript plugin, which allows you to write and execute Skript scripts directly in your server.</p>
+            <!-- Add content for setting up Skript -->
+        </div>
+        <div class="step">
+            <h3>Hello, World! in Skript</h3>
+            <p>Let's start with a simple "Hello, World!" script in Skript:</p>
+            <div class="code">
+                <pre><code>
+on join:
+    send "Hello, World!" to player
+                </code></pre>
+            </div>
+            <p>This script sends "Hello, World!" to a player whenever they join the server.</p>
+        </div>
+        <div class="step">
+            <h3>Basic Syntax</h3>
+            <p>Skript syntax is designed to be human-readable and intuitive. It uses a natural language-like syntax with keywords and expressions that resemble English sentences.</p>
+            <!-- Add content for basic syntax -->
+        </div>
+        <div class="step">
+            <h3>Events and Conditions</h3>
+            <p>In Skript, events are triggers that cause scripts to run, and conditions are used to check if certain criteria are met before executing actions. Here's an example:</p>
+            <div class="code">
+                <pre><code>
+on player death:
+    if victim is a player:
+        broadcast "%victim% died!"
+                </code></pre>
+            </div>
+            <p>This script broadcasts a message when a player dies.</p>
+        </div>
+        <div class="step">
+            <h3>Variables and Data Types</h3>
+            <p>Skript supports various data types including strings, numbers, booleans, and lists. Variables can be used to store and manipulate data within scripts.</p>
+            <pre><code>
+on join:
+    # The player datatype example
+    set {_plr} to player
+
+    # The string datatype example
+    set {_nick} to player's name
+    set {_str} to "&6I like Skript!"
+
+    # The boolean datatype example
+    if player is online:
+        set {_isOnline} to true
+    else:
+        send "&6Hey, this isn't possible! You just joined, and are offline???"
+
+    # The list datatype example
+    set {_players::*} to online players
+    send "&6Currently online players: %{_players::*}%"
+            </code></pre>
+        </div>
+        <div class="step">
+            <h3>Loops and Iteration</h3>
+            <p>Skript provides loop structures like foreach loops and while loops for iterating over collections of data or repeating actions until a condition is met.</p>
+            <pre><code>
+command /kickall [&lt;text&gt;]:
+    trigger:
+        send {_players::*} to online players
+        loop {_players::*}:
+            if loop-player has permission "kickall.bypass":
+                continue
+            else:
+                kick loop-player due to colored arg-1
+        send "&6Kicked all players."
+            </code></pre>
+        </div>
+        <div class="step">
+            <h3>Functions and Effects</h3>
+            <p>Functions and effects in Skript allow you to define custom actions and behaviors. Functions can take parameters and return values, while effects perform actions in the game world.</p>
+            <pre><code>
+function tpToSpawn(plr: player):
+    teleport {_plr} to {spawn}
+    send "&6Teleported."
+
+command /spawn:
+    executable by: players
+    trigger:
+        tpToSpawn(player)
+
+on respawn:
+    tpToSpawn(victim)
+            </code></pre>
+        </div>
+        <div class="step">
+            <h3>Expressions and Operators</h3>
+            <p>Skript supports various expressions and operators for performing calculations, comparisons, and logical operations. These allow you to manipulate data and control the flow of your scripts.</p>
+            <!-- Add content for expressions and operators -->
+        </div>
+        <div class="step">
+            <h3>Error Handling</h3>
+            <p>Skript provides error handling mechanisms to handle unexpected situations and errors gracefully. You can use try-catch blocks to catch and handle exceptions in your scripts.</p>
+            <!-- Add content for error handling -->
+        </div>
+        <div class="step">
+            <h3>Further Learning</h3>
+            <p>Skript offers a wide range of features and possibilities for customizing Minecraft servers. There are many advanced topics like event scripting, GUI creation, database integration, and plugin development to explore.</p>
+            <p>Happy scripting with Skript!</p>
+            <a href="https://docs.skriptlang.org/">Skript Documentation</a>
+            <a href="https://skripthub.net/tutorials/">SkriptHub Tutorials</a>
+            <a href="https://forums.skunity.com/">SkUnity Forums</a>
+            <a href="https://skript.pl">Polish Skript Forums</a>
+        </div>
+    </section>
+            <section id="newsletter" class="center animh">
+                <div class="line"></div>
+                <div class="child rainbow">
+                    <h2>Newsletter</h2>
+                    <p>Register to our newsletter for special messages, including exclusive updates, special offers and important announcements!</p>
+                    <a class="btn" href="https://fs4.formsite.com/ezUvts/SmathyCoSignUp/index">Register</a>
+                </div>
+            </section>
+            <footer id="footer" class="animh">
+                <div class="logo">
+                    <h2>SmathyCo</h2>
+                    <p>Your partner in innovative solutions.</p>
+                </div>
+                <ul>
+                    <li><h3>Get something done</h3></li>
+                    <li><a href="/pages/webcreation.html">Website Creation</a></li>
+                    <li><a href="/pages/softcreation.html">Software Creation</a></li>
+                    <li><a href="/pages/codecreation.html">Code Creation</a></li>
+                </ul>
+                <ul>
+                    <li><h3>Subpages</h3></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/learn/">Learn</a></li>
+                    <li><a href="/pages/contact-us/">Contact us</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="https://www.instagram.com/SmathyCo/"><img src="/img/i/ig.png"></a></li>
+                    <li><a href="https://www.linkedin.com/company/smathyco/"><img src="/img/i/in.png"></a></li>
+                    <li><a href="https://github.com/SmathyCo"><img src="/img/i/gh.png"></a></li>
+                    <li><a href="https://discord.gg/9xPhnsb5EK"><img src="/img/i/dc.png"></a></li>
+                </ul>
+            </footer>
+        </main>
+        <script src="/assets/all.js" async defer></script>
+    </body>
+</html>

@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Website Creation « SmathyCo</title>
-        <meta name="description" content="Want someone to create a website for you? That's the great place.">
+        <title>SmathyCo Learn</title>
+        <meta name="description" content="Learn to use various programming languages.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/styles.css">
     </head>
@@ -21,14 +21,13 @@
                 </ul>
             </nav>
             <section id="creation" class="center">
-                <div class="child rainbow">
-                    <h3>Website Creation</h3>
-                    <p>To have a fully custom website built by us, simply send us an email with your requirements or join our Discord and request it from our staff. We're here to help you create the perfect website for your needs.</p>
-                    <br>
-                    <ul class="flex">
-                        <li><a href="https://discord.gg/9xPhnsb5EK"><img src="/img/i/dc.png"></a></li>
-                        <li><a href="mailto:SmathyCo@gmail.com"><img src="/img/i/email.png"></a></li>
-                    </ul>
+                <div class="rainbow child">
+                    <h1 class="logo logofont" style="display:inline-block" c="SmathyCo Learn">SmathyCo Learn</h1>
+                    <p>Learn about various programming languages!</p>
+                    <div class="flex">
+                        <input id="search" type="search" placeholder="VBScript...">
+                        <button class="btn light" onclick="search()">Search</button>
+                    </div>
                 </div>
             </section>
             <section id="newsletter" class="center animh">
@@ -65,5 +64,6 @@
             </footer>
         </main>
         <script src="/assets/all.js" async defer></script>
+        <script src="/learn/search.js" async defer></script>
     </body>
 </html>

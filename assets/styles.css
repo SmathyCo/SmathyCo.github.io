@@ -226,7 +226,7 @@ body.loaded #home > p {
 
 section:first-of-type .logo::before,
 section:first-of-type .logo::after {
-    content: 'SmathyCo';
+    content: attr(c);
     position: absolute;
     left: -2px;
     top: -2px;
@@ -417,6 +417,8 @@ a {
 }
 
 .btn {
+    cursor: pointer;
+    border: none;
     border-radius: 7px;
     background: #26566b66;
     /* box-shadow: 0 0 5px 0 #26566b66; */
@@ -428,6 +430,15 @@ a {
     display: inline-block;
     color: #fff;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.btn.light {
+    background: #fff6;
+    box-shadow: 0 0 5px 0 #fff6, inset 0 -4px 5px -2px #0003;
+}
+
+.btn.light:hover {
+    box-shadow: 0 0 5px 0 #fff6, inset 0 -34px 5px -2px #0003;
 }
 
 .btn:hover {
@@ -451,4 +462,86 @@ a {
 
 img {
     width: 46px;
+}
+
+input[type="text"], input[type="search"] {
+    border: none;
+    border-radius: 7px;
+    background: #fff6;
+    box-shadow: 0 0 5px 0 #fff6, inset 0 -4px 5px -2px #0003;
+    padding: 6px 15px;
+    border: none;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    outline: none;
+}
+
+:is(input[type="text"], input[type="search"]):hover,
+:is(input[type="text"], input[type="search"]):focus-within {
+    box-shadow: 0 0 5px 0 #fff6, inset 0 -34px 5px -2px #0003;
+}
+
+:is(input[type="text"], input[type="search"]):focus-within {
+    box-shadow: 0 0 5px 0 #fff6, inset 0 -34px 5px -2px #0003, inset 0 -34px 5px -2px #0002;
+}
+
+input::placeholder {
+    color: #c3c3c3;
+}
+
+::-webkit-scrollbar {
+    background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff2;
+    box-shadow: 0 0 5px 0 #fff2;
+}
+
+.grid {
+    display: grid;
+}
+
+/* Learn » Language */
+section.main-title#ms {
+    height: 100px;
+    background: #0005;
+    backdrop-filter: blur(12px);
+    display: none;
+}
+
+section.container {
+    visibility: visible!important;
+    color: #fff;
+    background: #0007;
+    backdrop-filter: blur(10px);
+    padding: 2% 5%;
+    overflow: auto;
+    height: calc(100% - 120px);
+}
+
+section.container :is(h1, h2, h3, h4, h5, h6) {
+    margin: 10px 0 2px;
+    border-bottom: 1px solid #fff8;
+}
+
+section.container code {
+    background: #fff2;
+    display: block;
+    padding: 0 1%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 #fff2;
+    margin: 7px 0;
+}
+
+section.container p {
+    margin-bottom: 2px;
+}
+
+section.container a {
+    display: block;
+    margin-bottom: 2px;
 }

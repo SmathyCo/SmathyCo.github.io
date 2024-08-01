@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Learn to use various programming languages.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/styles.css">
+    <title>Assembly « SmathyCo Learn</title>
+</head>
+<body>
+    <main>
+        <nav id="navbar">
+            <div class="logo">
+                <h2 class="logofont">SmathyCo</h2>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/learn/">Learn</a></li>
+                <li><a href="/pages/contact-us/">Contact us</a></li>
+            </ul>
+        </nav>
+    <section class="main-title" id="ms">
+        <p class="p1">Assembly</p>
+    </section>
+    <section class="container">
+        <h2>What is Assembly Language?</h2>
+        <p>Assembly language is a low-level programming language that is closely related to machine code. It provides a symbolic representation of the machine instructions and data needed to program a specific CPU architecture.</p>
+        <p>Unlike high-level languages like HTML or Python, assembly language is specific to the hardware architecture it targets and allows programmers to have direct control over the hardware resources.</p>
+        <h2 style="margin-top: 100px;">Basics</h2>
+        <p>To begin your journey into assembly language programming, you'll need an understanding of the basic concepts and tools. Let's get started!</p>
+        <h3 style="margin-top: 100px;">Step 1: Understanding Assembly Language Structure</h3>
+        <div style="margin-left: 25px;">
+            <p>Assembly language programs consist of instructions that are mnemonic representations of machine-level operations. These instructions are typically organized into sections and are executed sequentially by the CPU.</p>
+            <p>Here's a simple example of an assembly language program:</p>
+            <div class="code">
+                <pre><code>
+section .text
+    global _start
+
+_start:
+    mov eax, 4      ; syscall number for sys_write
+    mov ebx, 1      ; file descriptor 1 (stdout)
+    mov ecx, msg    ; address of the message to print
+    mov edx, len    ; length of the message
+    int 0x80        ; invoke the kernel
+
+    mov eax, 1      ; syscall number for sys_exit
+    xor ebx, ebx    ; exit code 0
+    int 0x80        ; invoke the kernel
+
+section .data
+msg db 'Hello, World!', 0xa    ; the message to print
+len equ $ - msg                 ; calculate the length of the message
+</code></pre>
+            </div>
+        </div>
+        <h3 style="margin-top: 100px;">Step 2: Writing Assembly Code</h3>
+        <div style="margin-left: 25px;">
+            <p>Writing assembly code involves using mnemonic instructions and operands to perform operations such as arithmetic calculations, memory manipulation, and control flow.</p>
+            <p>Assembly code is typically written using a text editor and saved with a specific file extension, such as .asm. Once written, the code must be assembled into machine code using an assembler program.</p>
+        </div>
+        <h3 style="margin-top: 100px;">Step 3: Assembling and Executing Assembly Programs</h3>
+        <div style="margin-left: 25px;">
+            <p>After writing your assembly code, you'll need to assemble it into machine code using an assembler program specific to your CPU architecture. The resulting machine code can then be executed directly by the CPU.</p>
+            <p>Most assembly language development environments provide tools for assembling and debugging assembly code, allowing you to test and refine your programs.</p>
+        </div>
+        <h3 style="margin-top: 100px;">Step 4: Testing Your Assembly Code</h3>
+        <div style="margin-left: 25px;">
+            <p>Once your assembly code is assembled into machine code, you can test it by executing the resulting binary file on your target hardware or using a simulator program.</p>
+            <p>Testing and debugging are essential parts of the development process, helping to ensure that your assembly code functions correctly and efficiently.</p>
+        </div>
+        <h3 style="margin-top: 100px;">Step 5: Further Learning and Resources</h3>
+        <div style="margin-left: 25px;">
+            <p>Congratulations! You've completed the Assembly Language Basics Tutorial by SmathyCo. To deepen your understanding of assembly language programming, consider exploring advanced topics such as optimization techniques, system programming, and hardware interfacing.</p>
+            <p>There are many resources available online, including tutorials, books, and community forums, where you can continue to learn and grow as an assembly language programmer. Happy coding!</p>
+        </div>
+    </section>
+    <section id="newsletter" class="center animh">
+                <div class="line"></div>
+                <div class="child rainbow">
+                    <h2>Newsletter</h2>
+                    <p>Register to our newsletter for special messages, including exclusive updates, special offers and important announcements!</p>
+                    <a class="btn" href="https://fs4.formsite.com/ezUvts/SmathyCoSignUp/index">Register</a>
+                </div>
+            </section>
+            <footer id="footer" class="animh">
+                <div class="logo">
+                    <h2>SmathyCo</h2>
+                    <p>Your partner in innovative solutions.</p>
+                </div>
+                <ul>
+                    <li><h3>Get something done</h3></li>
+                    <li><a href="/pages/webcreation.html">Website Creation</a></li>
+                    <li><a href="/pages/softcreation.html">Software Creation</a></li>
+                    <li><a href="/pages/codecreation.html">Code Creation</a></li>
+                </ul>
+                <ul>
+                    <li><h3>Subpages</h3></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/learn/">Learn</a></li>
+                    <li><a href="/pages/contact-us/">Contact us</a></li>
+                </ul>
+                <ul class="right">
+                    <li><a href="https://www.instagram.com/SmathyCo/"><img src="/img/i/ig.png"></a></li>
+                    <li><a href="https://www.linkedin.com/company/smathyco/"><img src="/img/i/in.png"></a></li>
+                    <li><a href="https://github.com/SmathyCo"><img src="/img/i/gh.png"></a></li>
+                    <li><a href="https://discord.gg/9xPhnsb5EK"><img src="/img/i/dc.png"></a></li>
+                </ul>
+            </footer>
+        </main>
+        <script src="/assets/all.js" async defer></script>
+    </body>
+</html>
