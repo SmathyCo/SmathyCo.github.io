@@ -1,6 +1,0 @@
-{
-    "src": "./index.co",
-    "scripts": {
-        "run": "coe build"
-    }
-}
