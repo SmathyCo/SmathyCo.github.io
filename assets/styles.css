@@ -166,11 +166,11 @@ section > .line {
     animation: widthIn 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s forwards!important; */
 }
 
-body.hidenav #home {
+body.hidenav section:first-of-type {
     height: 100%;
 }
 
-#home {
+section:first-of-type {
     height: calc(100% - 45px);
     backdrop-filter: blur(3px);
     color: #fff;
@@ -195,7 +195,7 @@ main::after {
 }
 
 main::before {
-    content: 'made by olafcio (not a part of smathyco)';
+    content: 'made by olafcio (smathyco contributor)';
     bottom: 20px;
 }
 
@@ -204,7 +204,7 @@ body.scrolled main::before, body.scrolled main::after {
     translate: 50% 0;
 }
 
-#home > h1 {
+section:first-of-type .logo {
     font-size: 3em;
     color: #0000;
     width: fit-content;
@@ -224,8 +224,8 @@ body.loaded #home > p {
     animation-duration: 0.9s;
 }
 
-#home > h1::before,
-#home > h1::after {
+section:first-of-type .logo::before,
+section:first-of-type .logo::after {
     content: 'SmathyCo';
     position: absolute;
     left: -2px;
@@ -239,22 +239,22 @@ body.loaded #home > p {
     margin-top: 1px;
 }
 
-#home > h1::after {
+section:first-of-type .logo::after {
     opacity: 0.5;
     left: -4px;
     top: -4px;
     scale: 1.25;
 }
 
-#home > p {
+section:first-of-type > p {
     max-width: 30%;
 }
 
-#home > * {
+section:first-of-type > * {
     translate: 0 var(--scrollY);
 }
 
-body.scrolled #home {
+body.scrolled section:first-of-type {
     filter: blur(2px) brightness(0.7);
     pointer-events: none;
     user-select: none;
@@ -307,6 +307,21 @@ body.scrolled #home {
 
 #home > .cards > .card > p {
     font-size: 1.25em;
+}
+
+#creation {
+    background: #0000;
+}
+
+#creation > .child {
+    background: #000b;
+    padding: 3%;
+    font-size: 0.9em;
+    transform: translateX(-40px);
+}
+
+body:has(.scrolled) #creation > .child {
+    transform: translateX(-40px) translateY(-70px);
 }
 
 section.center {
@@ -364,7 +379,7 @@ a {
 
 .rainbow {
     margin: 2% 0 3% 0;
-    padding: 7px 14px;
+    padding: 9px 14px 10px;
     position: relative;
     border-radius: 8px;
 }
@@ -374,8 +389,8 @@ a {
     position: absolute;
     left: -3px;
     top: -3px;
-    width: calc(100% + 15px);
-    height: calc(100% + 15px);
+    width: calc(100% + 7px);
+    height: calc(100% + 7px);
     box-shadow: 0 0 5px 0 #0008;
     border-radius: 8px;
     pointer-events: none;
@@ -395,8 +410,8 @@ a {
     position: absolute;
     left: -3px;
     top: -3px;
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
     pointer-events: none;
 }
 
@@ -417,4 +432,22 @@ a {
 .btn:hover {
     /* background: #26566b77; */
     box-shadow: 0 0 5px 0 #26566b66, inset 0 -34px 5px -2px #0003;
+}
+
+.flex {
+    display: inline-flex;
+    list-style: none;
+    gap: 7px;
+}
+
+.flex li {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.flex li:has(a:hover) {
+    translate: 0 -3px;
+}
+
+img {
+    width: 46px;
 }
