@@ -195,7 +195,7 @@ main::after {
 }
 
 main::before {
-    content: 'made by olafcio (smathyco contributor)';
+    content: 'made by olafcio (smathyco contributor) x mathissparky';
     bottom: 20px;
 }
 
@@ -541,7 +541,7 @@ section.container p {
     margin-bottom: 2px;
 }
 
-section.container a {
+section.container > a {
     display: block;
     margin-bottom: 2px;
 }

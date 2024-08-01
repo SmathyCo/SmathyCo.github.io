@@ -74,8 +74,11 @@ addEventListener("load", () => {
                 "k": "color:#fff"
             };
 
-            function htmlescape(string) {
-                return string.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+            function htmlescape(string, quotes = false) {
+                let e = string.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+                if (quotes)
+                    e = e.replaceAll('"', "&quot;")
+                return e;
             }
 
             function addLine(format, ...args) {
@@ -124,8 +127,6 @@ addEventListener("load", () => {
                         html += char;
                     }
                 }
-                for (let n in styles)
-                    html = html.replaceAll("&amp;" + n, `<span style="${styles[n]}">&${n}</span>`);
                 result.push(html + "</span>".repeat(spans));
             }
             for (let line of lines) {
@@ -139,7 +140,36 @@ addEventListener("load", () => {
                 //     addLine("&[color:#1e90ff]&n{}");
                 else addLine("{}", line);
             }
-            el.innerHTML = result.join("\n");
+            var html = result.join("\n");
+            for (let n in styles)
+                html = html.replaceAll("&amp;" + n, `<span style="${styles[n]}">&${n}</span>`);
+            html = (html => {
+                let r = "";
+                let inString = false;
+                let wait = false;
+                for (let c of html) {
+                    if (wait) {
+                        if (c == ">")
+                            wait = false;
+                    } else if (c == "<") {
+                        wait = true;
+                    } else if (c == '"' || c == '`') {
+                        if (inString) {
+                            inString = false;
+                            r += c + "</span>";
+                            continue;
+                        } else {
+                            inString = true;
+                            r += '<span style="color:#4dc74d">';
+                        }
+                    }
+                    r += c;
+                }
+                if (inString)
+                    r += '</span>';
+                return r;
+            })(html);
+            el.innerHTML = html;
         });
 
 

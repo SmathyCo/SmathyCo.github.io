@@ -6,7 +6,7 @@
         <meta name="description" content="Learn to use various programming languages.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/assets/styles.css">
-    <title> « SmathyCo Learn</title>
+    <title>Shell « SmathyCo Learn</title>
 </head>
 <body>
     <main>
@@ -61,7 +61,17 @@ echo "Hello, $NAME!"
         <div class="step">
             <h3>Control Flow</h3>
             <p>Shell scripts support various control structures such as if-else, for loops, and while loops for decision making and looping.</p>
-            <!-- Add content for control flow -->
+            <pre><code>
+#!/bin/bash
+read -s -p "Password: "
+echo
+if [[ $REPLY -eq "123" ]]
+then
+    echo "Correct password :D"
+else
+    echo "Wrong password!"
+fi
+            </code></pre>
         </div>
         <div class="step">
             <h3>Functions</h3>
