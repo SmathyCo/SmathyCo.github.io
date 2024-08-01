@@ -36,7 +36,7 @@ const search = () => {
         "sql": undefined,
         "swift": undefined,
         "typescript": "ts",
-        "visualbasic": ["vb", "vba", "vbs"],
+        "visualbasic": ["vb", "vba"],
         "groovy": undefined,
         "matlab": "ml",
         "make": ["mk", "mf", "makefile"],
@@ -49,12 +49,10 @@ const search = () => {
     if (o == "") {
         alert("Please insert a programming language name, if you have no idea what the programming language you want to learn is, you should ask on our Discord.");
     } else if (options[o]) {
-        o = options[o];
         location.assign("/learn/languages/" + o + "/" + o + ".html");
     } else {
         for (let o2 in options) {
             let v = options[o2];
-            console.log(o2, v);
             if (o2.startsWith(o) ||
                 v == o ||
                 (
@@ -68,6 +66,27 @@ const search = () => {
             )
                 return location.assign("/learn/languages/" + o2 + "/" + o2 + ".html");
         }
+        let sim = {};
+        for (let o2 in options) {
+            let g = 0;
+            for (let i = 0; i < o.length; i++)
+                if (o[i] == o2[i])
+                    g++;
+                else break;
+            sim[o2] = g;
+        }
+        console.log(JSON.stringify(sim));
+        let max = -1;
+        let maxv;
+        for (let s in sim) {
+            let sv = sim[s];
+            if (sv > max) {
+                max = sv;
+                maxv = s;
+            }
+        }
+        if (max >= 3)
+            return location.assign("/learn/languages/" + maxv + "/" + maxv + ".html");
         alert("The programming language " + o + " couldn't found. Try correcting errors in the name or suggest the programming language on our Discord.");
     }
 };
