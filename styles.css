@@ -29,7 +29,7 @@
     100%{opacity:1;scale:1}
 }
 
-html, body, main, section {
+html, body, main {
     height: 100%;
     position: relative;
 }
@@ -40,7 +40,7 @@ html {
 
 body {
     font-family: "Inter", system-ui;
-    overflow: hidden;
+    /* overflow: hidden; */
     opacity: 0;
     animation: show 0.3s cubic-bezier(0.23, 1, 0.320, 1) 0.3s forwards;
 }
@@ -54,7 +54,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     position: sticky;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     background: #0007;
     color: #fff;
@@ -88,7 +88,32 @@ nav > ul a:hover {
 }
 
 main {
-    background: url(./programmerkid.jpg) 0 / cover;
+    background: url(https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?cs=srgb&dl=pexels-cottonbro-4709289.jpg&fm=jpg) 0 / cover;
+    background-attachment: fixed;
+}
+
+section {
+    position: relative;
+    background-attachment: fixed!important;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+section:not(:first-of-type):not(:nth-of-type(2)) {
+    margin-top: -4px;
+}
+
+section > .line {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 3;
+    width: 105%;
+    height: 3px;
+    backdrop-filter: blur(4px);
+    background: linear-gradient(0deg, #0005, #0000);
+    filter: blur(1px);
 }
 
 #home {
@@ -101,20 +126,28 @@ main {
     padding-left: 7%;
 }
 
-#home::before,
-#home::after {
+main::before,
+main::after {
     position: absolute;
     bottom: 0;
     right: 0;
     margin: 5px;
     content: 'image: cottonbro studio @ pexels.com';
-    font-size: 0.7em;
-    color: #c1c1c1;
+    font-size: 0.75em;
+    color: #d6d6d6;
+    text-shadow: 0 0 5px #d6d6d6bb;
+    z-index: 4;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-#home::before {
-    content: 'made by olafcio';
+main::before {
+    content: 'made by olafcio (not a part of smathyco)';
     bottom: 20px;
+}
+
+body.scrolled main::before, body.scrolled main::after {
+    right: 50%;
+    translate: 50% 0;
 }
 
 #home > h1 {
@@ -151,6 +184,16 @@ main {
 
 #home > p {
     max-width: 30%;
+}
+
+#home > * {
+    translate: 0 var(--scrollY);
+}
+
+body.scrolled #home {
+    filter: blur(2px) brightness(0.7);
+    pointer-events: none;
+    user-select: none;
 }
 
 #home > .cards {
@@ -200,4 +243,73 @@ main {
 
 #home > .cards > .card > p {
     font-size: 1.25em;
+}
+
+section.center {
+    background: #fff;
+    display: grid;
+    text-align: center;
+    justify-items: center;
+    align-content: center;
+    min-height: 150px;
+}
+
+section.center p {
+    margin-block: 5px;
+    max-width: 500px;
+}
+
+.rainbow {
+    margin: 2% 0 3% 0;
+    padding: 7px 14px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.rainbow::after {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    width: calc(100% + 15px);
+    height: calc(100% + 15px);
+    box-shadow: 0 0 5px 0 #0008;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.rainbow::before {
+    content: '';
+    border-radius: 8px;
+    overflow: hidden;
+    border: 5px solid #000;
+    box-shadow: inset -2px -2px 5px 0 #0003;
+    background-clip: border-box;
+    clip-path: inset(0% 0% 0% 0% round 8px);
+    border-image-source: url(https://cdn.vectorstock.com/i/500p/60/79/rainbow-background-pastel-color-abstract-pattern-vector-43916079.jpg);
+    border-image-slice: 40;
+    border-image-repeat: stretch;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    pointer-events: none;
+}
+
+.btn {
+    border-radius: 7px;
+    background: #26566b66;
+    box-shadow: 0 0 5px 0 #26566b66;
+    padding: 6px 15px;
+    border: none;
+    font-family: inherit;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.btn:hover {
+    background: #26566b77;
 }
