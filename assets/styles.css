@@ -318,6 +318,7 @@ body.scrolled section:first-of-type {
     padding: 3%;
     font-size: 0.9em;
     transform: translateX(-40px);
+    animation: gdScafadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s forwards;
 }
 
 body:has(.scrolled) #creation > .child {
