@@ -152,6 +152,12 @@ addEventListener("load", () => {
                          /^func (.*)/.test(lt) ||
                          /^sub (.*)/.test(ll) ||
                          /^module (.+)/.test(ll) ||
+                         /^class (.*)/.test(ll) ||
+                         /^interface (.*)/.test(ll) ||
+                         /^@interface (.*)/.test(ll) ||
+                         /^enum (.*)/.test(ll) ||
+                         /^clause (.*)/.test(ll) ||
+                         /^record (.*)/.test(ll) ||
                          /^}(.*)/.test(lt) ||
                          /^end function|sub|module/.test(ll))
                     addLine("&[color:#ffb666]&l{}", line);
