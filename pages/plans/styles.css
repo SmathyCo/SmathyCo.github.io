@@ -6,14 +6,12 @@
 .plans {
     font-size: 0.9em;
     text-align: left;
-    margin: 9px 0;
+    margin: 29px 0 12px;
     gap: 10px;
 }
 
 .plans > .plan {
     border-radius: 8px 0 8px 8px;
-    display: grid;
-    gap: 4px;
     width: 300px;
     background: #fff3;
     box-shadow: 0 7px 15px 1px #fff3;
@@ -22,9 +20,29 @@
     backdrop-filter: blur(15px);
 }
 
-.plans > .plan > .price {
+.plans > .plan:has(.btw),
+.plans > .plan:has(.btw) > .price {
+    border-top-left-radius: 0;
+}
+
+.plans > .plan > .btw {
     margin: 0;
-    justify-self: right;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0;
+    top: -25px;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    background: #4c96e0;
+    box-shadow: 0 0 5px 0 #4c96e0;
+    height: 25px;
+    border-radius: 8px 8px 0 0;
+}
+
+.plans > .plan > .price {
+    margin: 0 0 0 auto;
+    width: max-content;
     padding: 7px 4%;
     height: 19px;
     border-radius: 15px 0 0 15px;
@@ -32,9 +50,15 @@
     box-shadow: 0 1px 5px 0 #fff3;
 }
 
+.plans > .plan > .title {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 3px 0 6px;
+}
+
 .plans > .plan > ul {
     list-style: none;
-    margin: 7px 0 9px;
+    margin: 13px 0 20px;
 }
 
 .plans > .plan > ul > li {
