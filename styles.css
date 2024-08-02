@@ -30,7 +30,7 @@ nav {
     left: 0;
     right: 0;
     z-index: 9999;
-    margin-top: 10px;
+    padding-top: 10px;
     animation: slideDown 1s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
