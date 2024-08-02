@@ -133,6 +133,7 @@ addEventListener("load", () => {
             }
             let instr = false;
             for (let line of lines) {
+                let startIndent = " ".repeat(line.length - line.trimStart().length);
                 let ll = line.toLowerCase();
                 let _;
                 if (/^on (.*):/.test(line))
@@ -168,8 +169,10 @@ addEventListener("load", () => {
                          /^cooldown: (.*)/.test(line.trim()) ||
                          /^cooldown message: (.*)/.test(line.trim()))
                     addLine("&[color:#ffb666]{}", line);
-                else if (_ = /^(package|import|print|echo|exit|raise|throw|return|if|set|kick|send|broadcast) (.*)/.exec(line.trim()))
-                    addLine(" ".repeat(line.length - line.trimStart().length) + "&3{}&r {}", _[1], _[2]);
+                else if (_ = /^(a-Z,0-9,\$)(@|!?)\((.*)\)(.*)/.exec(line.trim()))
+                    addLine(startIndent + "&e{}&6{}&9(&r{}&9)&r{}", _[1], _[2], (console.log(_) || _)[3], _[4]);
+                else if (_ = /^(@|!|\??)(package|import|print|echo|exit|raise|throw|return|if|set|kick|send|broadcast)(!|\??) (.*)/.exec(line.trim()))
+                    addLine(startIndent + "&6{}&3{}&6{}&r {}", _[1], _[2], _[3], _[4]);
                 else if (/^#!(.+)/.test(line))
                     addLine("&7{}", line);
                 else if (/^[#|//]/.test(line.trim()))
