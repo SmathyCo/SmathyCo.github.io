@@ -135,6 +135,7 @@ addEventListener("load", () => {
             for (let line of lines) {
                 let startIndent = " ".repeat(line.length - line.trimStart().length);
                 let ll = line.toLowerCase();
+                let lt = ll.trim();
                 let _;
                 if (/^on (.*):/.test(line))
                     addLine("&6&l{}", line);
@@ -144,39 +145,31 @@ addEventListener("load", () => {
                     addLine("{}", line);
                     continue;
                 } else if (/^command \/(.*):/.test(ll) ||
-                         /^def (.*)/.test(ll) ||
-                         /^function (.*)/.test(ll) ||
-                         /^fn (.*)/.test(ll) ||
-                         /^fun (.*)/.test(ll) ||
-                         /^func (.*)/.test(ll) ||
+                         /^def (.*)/.test(lt) ||
+                         /^function (.*)/.test(lt) ||
+                         /^fn (.*)/.test(lt) ||
+                         /^fun (.*)/.test(lt) ||
+                         /^func (.*)/.test(lt) ||
                          /^sub (.*)/.test(ll) ||
                          /^module (.+)/.test(ll) ||
-                         /^if(.*)/.test(ll) ||
-                         /^elif(.*)/.test(ll) ||
-                         /^else(.*)/.test(ll) ||
-                         /^fi(.*)/.test(ll) ||
-                         /^for (.*)/.test(ll) ||
-                         /^while (.*)/.test(ll) ||
-                         /^foreach (.*)/.test(ll) ||
-                         /^loop(.*)/.test(ll) ||
-                         /^}(.*)/.test(ll) ||
+                         /^}(.*)/.test(lt) ||
                          /^end function|sub|module/.test(ll))
                     addLine("&[color:#ffb666]&l{}", line);
-                else if (/^trigger:/.test(line.trim()) ||
-                         /^executable by: (.+)/.test(line.trim()) ||
-                         /^permission: (.+)/.test(line.trim()) ||
-                         /^permission message: (.*)/.test(line.trim()) ||
-                         /^cooldown: (.*)/.test(line.trim()) ||
-                         /^cooldown message: (.*)/.test(line.trim()))
+                else if (/^trigger:/.test(lt) ||
+                         /^executable by: (.+)/.test(lt) ||
+                         /^permission: (.+)/.test(lt) ||
+                         /^permission message: (.*)/.test(lt) ||
+                         /^cooldown: (.*)/.test(lt) ||
+                         /^cooldown message: (.*)/.test(lt))
                     addLine("&[color:#ffb666]{}", line);
                 // TODO: Make a regexp on a function execution! 🔽
                 // else if (_ = /^(a-Z,0-9,\$)(@|!?)\((.*)\)(.*)/.exec(line.trim()))
                 //     addLine(startIndent + "&e{}&6{}&9(&r{}&9)&r{}", _[1], _[2], (console.log(_) || _)[3], _[4]);
-                else if (_ = /^(@|!|\??)(package|import|print|echo|exit|raise|throw|return|if|set|kick|send|broadcast)(!|\??) (.*)/.exec(line.trim()))
-                    addLine(startIndent + "&6{}&3{}&6{}&r {}", _[1], _[2], _[3], _[4]);
+                else if (_ = /^(@|!|\??)(package|import|print|echo|exit|raise|throw|return|if|set|kick|send|broadcast|if|elif|else|fi|for|while|loop|foreach)(!|\??)(.*)/.exec(line.trim()))
+                    addLine(startIndent + "&6{}&3{}&6{}&r{}", _[1], _[2], _[3], _[4]);
                 else if (/^#!(.+)/.test(line))
                     addLine("&7{}", line);
-                else if (/^#|\/\/|::/.test(line.trim()))
+                else if (/^(#|\/\/|::)/.test(lt))
                     addLine("&8{}", line);
                 // else if (/(.*)=(.*)/.test(line))
                 //     addLine("&[color:#1e90ff]&n{}");
