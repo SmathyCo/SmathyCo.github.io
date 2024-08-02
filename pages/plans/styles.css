@@ -1,0 +1,54 @@
+#main > p {
+    width: fit-content;
+    display: inline-block;
+}
+
+.plans {
+    font-size: 0.9em;
+    text-align: left;
+    margin: 9px 0;
+    gap: 10px;
+}
+
+.plans > .plan {
+    border-radius: 8px 0 8px 8px;
+    display: grid;
+    gap: 4px;
+    width: 300px;
+    background: #fff3;
+    box-shadow: 0 7px 15px 1px #fff3;
+    position: relative;
+    padding-left: 2%;
+    backdrop-filter: blur(15px);
+}
+
+.plans > .plan > .price {
+    margin: 0;
+    justify-self: right;
+    padding: 7px 4%;
+    height: 19px;
+    border-radius: 15px 0 0 15px;
+    background: #fff4;
+    box-shadow: 0 1px 5px 0 #fff3;
+}
+
+.plans > .plan > ul {
+    list-style: none;
+    margin: 7px 0 9px;
+}
+
+.plans > .plan > ul > li {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.plans > .plan > ul > li::before {
+    content: '';
+    display: inline-block;
+    background: url(https://static-00.iconduck.com/assets.00/checkmark-running-icon-2048x2048-8081bf4v.png) 0 0 / cover;
+    width: 24px;
+    height: 24px;
+    margin-right: 3px;
+}

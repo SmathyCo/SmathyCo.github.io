@@ -169,13 +169,14 @@ addEventListener("load", () => {
                          /^cooldown: (.*)/.test(line.trim()) ||
                          /^cooldown message: (.*)/.test(line.trim()))
                     addLine("&[color:#ffb666]{}", line);
-                else if (_ = /^(a-Z,0-9,\$)(@|!?)\((.*)\)(.*)/.exec(line.trim()))
-                    addLine(startIndent + "&e{}&6{}&9(&r{}&9)&r{}", _[1], _[2], (console.log(_) || _)[3], _[4]);
+                // TODO: Make a regexp on a function execution! 🔽
+                // else if (_ = /^(a-Z,0-9,\$)(@|!?)\((.*)\)(.*)/.exec(line.trim()))
+                //     addLine(startIndent + "&e{}&6{}&9(&r{}&9)&r{}", _[1], _[2], (console.log(_) || _)[3], _[4]);
                 else if (_ = /^(@|!|\??)(package|import|print|echo|exit|raise|throw|return|if|set|kick|send|broadcast)(!|\??) (.*)/.exec(line.trim()))
                     addLine(startIndent + "&6{}&3{}&6{}&r {}", _[1], _[2], _[3], _[4]);
                 else if (/^#!(.+)/.test(line))
                     addLine("&7{}", line);
-                else if (/^[#|//]/.test(line.trim()))
+                else if (/^#|\/\/|::/.test(line.trim()))
                     addLine("&8{}", line);
                 // else if (/(.*)=(.*)/.test(line))
                 //     addLine("&[color:#1e90ff]&n{}");
