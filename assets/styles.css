@@ -559,6 +559,14 @@ section.container :is(p, span) code {
     width: fit-content;
 }
 
+section.container .warning {
+    border-radius: 5px;
+    margin: 5px 0;
+    border: 1px solid #ff4747;
+    box-shadow: 0 0 5px 0 #ff4747;
+    padding: 1% 2%;
+}
+
 /* Learn main page */
 #learn {
     background: #0000;
