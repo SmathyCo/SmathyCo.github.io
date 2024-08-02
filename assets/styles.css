@@ -131,7 +131,7 @@ nav > ul a:hover {
 }
 
 main {
-    background-image: url(/img/programmerkid.jpg), url(https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?cs=srgb&dl=pexels-cottonbro-4709289.jpg&fm=jpg)!important;
+    background-image: /*url(/img/programmerkid.jpg), */url(https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?cs=srgb&dl=pexels-cottonbro-4709289.jpg&fm=jpg)!important;
     background: #0000 0 / cover;
     background-attachment: fixed;
 }
