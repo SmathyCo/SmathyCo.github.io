@@ -262,7 +262,7 @@ section:first-of-type > * {
     translate: 0 var(--scrollY);
 }
 
-body.scrolled section:first-of-type {
+body.scrolled section:is(:first-of-type, #container) {
     filter: blur(2px) brightness(0.7);
     pointer-events: none;
     user-select: none;
