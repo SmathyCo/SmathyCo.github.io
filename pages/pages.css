@@ -32,3 +32,17 @@ nav ul li a {
     transition: ease 0.3s;
     transform: translateY(-5px);
 }
+
+/* Make sure the wrapper takes up the full viewport height */
+.wrapper {
+    display: flex;
+    align-items: center;  /* Vertically center */
+    justify-content: center;  /* Horizontally center */
+    height: 60vh;  /* Full viewport height */
+    margin: 0;
+}
+
+/* Optional: you can add additional styling for the content */
+.content {
+    text-align: center;
+}

@@ -31,6 +31,7 @@ nav {
     right: 0;
     z-index: 9999;
     margin-top: 10px;
+    animation: slideDown 1s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 .mainSection {
@@ -106,6 +107,7 @@ nav {
     position: absolute;
     margin-top: 30vh;
     margin-left: 25px;
+    animation: slideInFromLeft 1s ease-out;
 }
 
 .p2 {
@@ -363,6 +365,46 @@ nav {
 .card:hover .card-title {
     transition: all 0.5s ease-out;
     color: #ffffff;
+}
+
+.fade-in {
+    color: white;
+    font-size: 23px;
+    margin-top: -0.01%;
+    opacity: 0; /* Start as invisible */
+    transform: translateX(-100px); /* Start from the left */
+    transition: opacity 2s ease, transform 2s ease; /* Transition for the animation */
+}
+
+.fade-in.visible {
+    opacity: 1; /* Fully opaque */
+    transform: translateX(0); /* End at its original position */
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* End at the normal position */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {

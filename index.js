@@ -1,3 +1,55 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('myButton');
+    const msSection = document.getElementById('ms');
+
+    // Function to check if the element is in the viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Function to handle button visibility based on scroll
+    function handleButtonVisibility() {
+        const detectMob = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (detectMob) {
+            // If mobile device, make sure button is removed
+            if (button && document.body.contains(button)) {
+                button.remove();
+            }
+        } else {
+            // If not mobile device
+            if (msSection && !isElementInViewport(msSection)) {
+                // Section is not in viewport, append button if it's not already there
+                if (button && !document.body.contains(button)) {
+                    document.body.appendChild(button);
+                }
+            } else {
+                // Section is in viewport or button is not needed
+                if (button && document.body.contains(button)) {
+                    button.remove();
+                }
+            }
+        }
+    }
+
+    // Remove the button on page load
+    if (button) {
+        button.remove();
+    }
+
+    // Check button visibility on scroll
+    window.addEventListener('scroll', handleButtonVisibility);
+
+    // Also check button visibility on page load in case user starts scrolling immediately
+    handleButtonVisibility();
+});
+
 function openFile(path) {
     window.open(path, "_self");
 }
@@ -54,41 +106,6 @@ window.addEventListener('scroll', toggleNavColor);
 function goLoading(x, y) {
     window.location.href = x + '?redirectUrl=' + encodeURIComponent(y);
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const button = document.getElementById('myButton');
-    const detectMob = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    if (detectMob === true && button) {
-        button.remove();
-    }
-    window.addEventListener('scroll', function() {
-        const msSection = document.getElementById('ms');
-        const detectMobOnScroll = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        if (detectMobOnScroll === false && msSection && !isElementInViewport(msSection)) {
-            if (button && !d-
-            
-            
-            
-            
-            ocument.body.contains(button)) {
-                document.body.appendChild(button);
-            }
-        } else {
-            if (button && document.body.contains(button)) {
-                button.remove();
-            }
-        }
-    });
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-});
 
 window.addEventListener('DOMContentLoaded', function() {
     const detectMob = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -194,4 +211,8 @@ document.addEventListener('DOMContentLoaded', function() {
     titleElements3.forEach(element => {
         observer.observe(element);
     });
+});
+
+window.addEventListener('load', function() {
+    document.getElementById('animated-text').classList.add('visible');
 });
