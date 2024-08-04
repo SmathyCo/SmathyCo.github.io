@@ -207,75 +207,6 @@ nav {
     transition-duration: 0.3s;
 }
 
-.c-button {
-    color: #000;
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 0.9em 1.6em;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    z-index: 1;
-}
-
-.c-button--gooey {
-    color: #06c8d9;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 4px solid #06c8d9;
-    border-radius: 0;
-    position: relative;
-    transition: all 700ms ease;
-    background-color: transparent;
-    width: 200px;
-}
-
-.c-button--gooey .c-button__blobs {
-    height: 100%;
-    filter: url(#goo);
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: -3px;
-    right: -1px;
-    z-index: -1;
-}
-
-.c-button--gooey .c-button__blobs div {
-    background-color: #06c8d9;
-    width: 34%;
-    height: 100%;
-    border-radius: 100%;
-    position: absolute;
-    transform: scale(1.4) translateY(125%) translateZ(0);
-    transition: all 700ms ease;
-}
-
-.c-button--gooey .c-button__blobs div:nth-child(1) {
-    left: -5%;
-}
-
-.c-button--gooey .c-button__blobs div:nth-child(2) {
-    left: 30%;
-    transition-delay: 60ms;
-}
-
-.c-button--gooey .c-button__blobs div:nth-child(3) {
-    left: 66%;
-    transition-delay: 25ms;
-}
-
-.c-button--gooey:hover {
-    color: #fff;
-}
-
-.c-button--gooey:hover .c-button__blobs div {
-    transform: scale(1.4) translateY(0) translateZ(0);
-}
-
 .card-title {
     color: #262626;
     font-size: 1.5em;
@@ -316,57 +247,6 @@ nav {
     font-family: courier, sans;
 }
 
-.card {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-    display: block;
-    position: relative;
-    max-width: 300px;
-    max-height: 320px;
-    background-color: #f2f8f9;
-    border-radius: 10px;
-    padding: 2em 1.2em;
-    margin: 12px;
-    text-decoration: none;
-    z-index: 0;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.card.show {
-    opacity: 1;
-}
-
-.card:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: -16px;
-    right: -16px;
-    background: linear-gradient(135deg, #364a60, #384c6c);
-    height: 32px;
-    width: 32px;
-    border-radius: 32px;
-    transform: scale(1);
-    transform-origin: 50% 30%;
-    transition: transform 0.35s ease-out;
-}
-
-.card:hover:before {
-    transform: scale(28);
-}
-
-.card:hover .small-desc {
-    transition: all 0.5s ease-out;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.card:hover .card-title {
-    transition: all 0.5s ease-out;
-    color: #ffffff;
-}
-
 .fade-in {
     color: white;
     font-size: 23px;
@@ -379,6 +259,360 @@ nav {
 .fade-in.visible {
     opacity: 1; /* Fully opaque */
     transform: translateX(0); /* End at its original position */
+}
+
+.cardv2 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    width: 500px;
+    border: solid 1px rgb(145, 145, 145);
+    border-radius: 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #302b62, #5e4b8b, #a89cc0);
+    box-shadow: inset 0 0 10px 7px rgba(255, 255, 255, 0.5);
+    color: lightgray;
+    position: relative; /* Needed for positioning pseudo-elements */
+    overflow: hidden; /* Ensure dots don't overflow */
+}
+
+.cardv2:hover {
+    animation: spin 5s linear infinite;
+}
+
+.cardv2.show {
+    opacity: 1;
+}
+
+.cardv2::before,
+.cardv2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+    background-size: 50px 50px; /* Adjust dot size */
+    z-index: 0;
+}
+
+.cardv2::before {
+    background-position: 0 0;
+}
+
+.cardv2::after {
+    background-position: 25px 25px; /* Slightly offset for a more random look */
+}
+
+.cardv2 * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% {
+        background: linear-gradient(135deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    1% {
+        background: linear-gradient(138deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    2% {
+        background: linear-gradient(141deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    3% {
+        background: linear-gradient(144deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    4% {
+        background: linear-gradient(147deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    5% {
+        background: linear-gradient(150deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    6% {
+        background: linear-gradient(153deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    7% {
+        background: linear-gradient(156deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    8% {
+        background: linear-gradient(159deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    9% {
+        background: linear-gradient(162deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    10% {
+        background: linear-gradient(165deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    11% {
+        background: linear-gradient(168deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    12% {
+        background: linear-gradient(171deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    13% {
+        background: linear-gradient(174deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    14% {
+        background: linear-gradient(177deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    15% {
+        background: linear-gradient(180deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    16% {
+        background: linear-gradient(183deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    17% {
+        background: linear-gradient(186deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    18% {
+        background: linear-gradient(189deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    19% {
+        background: linear-gradient(192deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    20% {
+        background: linear-gradient(195deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    21% {
+        background: linear-gradient(198deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    22% {
+        background: linear-gradient(201deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    23% {
+        background: linear-gradient(204deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    24% {
+        background: linear-gradient(207deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    25% {
+        background: linear-gradient(210deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    26% {
+        background: linear-gradient(213deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    27% {
+        background: linear-gradient(216deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    28% {
+        background: linear-gradient(219deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    29% {
+        background: linear-gradient(222deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    30% {
+        background: linear-gradient(225deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    31% {
+        background: linear-gradient(228deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    32% {
+        background: linear-gradient(231deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    33% {
+        background: linear-gradient(234deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    34% {
+        background: linear-gradient(237deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    35% {
+        background: linear-gradient(240deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    36% {
+        background: linear-gradient(243deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    37% {
+        background: linear-gradient(246deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    38% {
+        background: linear-gradient(249deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    39% {
+        background: linear-gradient(252deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    40% {
+        background: linear-gradient(255deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    41% {
+        background: linear-gradient(258deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    42% {
+        background: linear-gradient(261deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    43% {
+        background: linear-gradient(264deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    44% {
+        background: linear-gradient(267deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    45% {
+        background: linear-gradient(270deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    46% {
+        background: linear-gradient(273deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    47% {
+        background: linear-gradient(276deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    48% {
+        background: linear-gradient(279deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    49% {
+        background: linear-gradient(282deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    50% {
+        background: linear-gradient(285deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    51% {
+        background: linear-gradient(288deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    52% {
+        background: linear-gradient(291deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    53% {
+        background: linear-gradient(294deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    54% {
+        background: linear-gradient(297deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    55% {
+        background: linear-gradient(300deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    56% {
+        background: linear-gradient(303deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    57% {
+        background: linear-gradient(306deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    58% {
+        background: linear-gradient(309deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    59% {
+        background: linear-gradient(312deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    60% {
+        background: linear-gradient(315deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    61% {
+        background: linear-gradient(318deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    62% {
+        background: linear-gradient(321deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    63% {
+        background: linear-gradient(324deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    64% {
+        background: linear-gradient(327deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    65% {
+        background: linear-gradient(330deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    66% {
+        background: linear-gradient(333deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    67% {
+        background: linear-gradient(336deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    68% {
+        background: linear-gradient(339deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    69% {
+        background: linear-gradient(342deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    70% {
+        background: linear-gradient(345deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    71% {
+        background: linear-gradient(348deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    72% {
+        background: linear-gradient(351deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    73% {
+        background: linear-gradient(354deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    74% {
+        background: linear-gradient(357deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    75% {
+        background: linear-gradient(360deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    76% {
+        background: linear-gradient(363deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    77% {
+        background: linear-gradient(366deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    78% {
+        background: linear-gradient(369deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    79% {
+        background: linear-gradient(372deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    80% {
+        background: linear-gradient(375deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    81% {
+        background: linear-gradient(378deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    82% {
+        background: linear-gradient(381deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    83% {
+        background: linear-gradient(384deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    84% {
+        background: linear-gradient(387deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    85% {
+        background: linear-gradient(390deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    86% {
+        background: linear-gradient(393deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    87% {
+        background: linear-gradient(396deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    88% {
+        background: linear-gradient(399deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    89% {
+        background: linear-gradient(402deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    90% {
+        background: linear-gradient(405deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    91% {
+        background: linear-gradient(408deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    92% {
+        background: linear-gradient(411deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    93% {
+        background: linear-gradient(414deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    94% {
+        background: linear-gradient(417deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    95% {
+        background: linear-gradient(420deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    96% {
+        background: linear-gradient(423deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    97% {
+        background: linear-gradient(426deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    98% {
+        background: linear-gradient(429deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    99% {
+        background: linear-gradient(432deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    100% {
+        background: linear-gradient(435deg, #302b62, #5e4b8b, #a89cc0); /* Loop back to the start */
+    }
 }
 
 @keyframes slideInFromLeft {
@@ -441,6 +675,15 @@ nav {
 
     .hashtag {
         margin-top: -25px;
+    }
+
+    .cardv2.show {
+        margin-left: 0;
+        width: calc(100% - 50px);
+    }
+
+    .btng {
+        margin-top: 130px;
     }
 }
 

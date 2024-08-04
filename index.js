@@ -112,7 +112,7 @@ window.addEventListener('DOMContentLoaded', function() {
     if (detectMob === true) {
         const maxWidth = 768;
         function adjustCardPosition() {
-            const cards = document.querySelectorAll('.card');
+            const cards = document.querySelectorAll('.cardv2');
             const windowWidth = window.innerWidth || document.documentElement.clientWidth;
             cards.forEach(function(card) {
                 if (windowWidth <= maxWidth) {
@@ -187,7 +187,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const titleElements = document.querySelectorAll('.about');
-    const titleElements2 = document.querySelectorAll('.card');
+    const titleElements2 = document.querySelectorAll('.cardv2');
     const titleElements3 = document.querySelectorAll('.contactus');
 
     const observer = new IntersectionObserver((entries) => {
