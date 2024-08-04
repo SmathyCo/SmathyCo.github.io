@@ -309,6 +309,21 @@ nav {
     z-index: 1;
 }
 
+.socialmediacircle {
+    transition: ease 0.5s;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.socialmediacircle:hover {
+    transition: ease 0.5s;
+    transform: scale(1.1);
+}
+
 @keyframes spin {
     0% {
         background: linear-gradient(135deg, #302b62, #5e4b8b, #a89cc0);
@@ -716,21 +731,6 @@ nav {
 
 .sign-up-button:hover {
     background-color: #0056b3;
-}
-
-.socialmediacircle {
-    transition: ease 0.5s;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 50%;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.socialmediacircle:hover {
-    transition: ease 0.5s;
-    transform: scale(1.1);
 }
 
 .twop {
