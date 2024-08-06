@@ -54,7 +54,7 @@ nav {
     opacity: 0;
     transition: opacity 0.5s ease-in;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 250px;
 }
 
@@ -322,6 +322,89 @@ nav {
 .socialmediacircle:hover {
     transition: ease 0.5s;
     transform: scale(1.1);
+}
+
+.paper.show {
+    opacity: 1;
+}
+
+.paper {
+    opacity: 0;
+    transition: 
+        opacity 0.7s ease-in,        /* Transition for opacity */
+        box-shadow 0.3s ease,        /* Transition for box-shadow */
+        transform 0.3s ease;         /* Transition for transform */
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    background: #fff;
+    border-radius: 10px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+.paper:hover {
+    box-shadow: 
+        0 16px 32px rgba(0, 0, 0, 0.3),  /* Stronger shadow for higher elevation */
+        0 8px 12px rgba(0, 0, 0, 0.2);   /* Lighter shadow for additional depth */
+    transform: translateY(-10px); /* Lifts the paper up */
+}
+
+.paperTitle {
+    font-weight: bold;
+    font-size: 25px;
+    font-weight: 760;
+    letter-spacing: 0.5px;
+}
+
+.paperButton {
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 
+        background-color 0.3s ease, 
+        box-shadow 0.3s ease, 
+        transform 0.3s ease; /* Smooth transitions */
+    opacity: 0; /* Hide the button by default */
+    visibility: hidden; /* Ensure the button is not clickable */
+}
+
+.paperButton:hover {
+    background-color: #00000048; /* Darker shade on hover */
+    box-shadow: 
+        0 12px 24px rgba(0, 0, 0, 0.2),  /* Stronger shadow for elevation */
+        0 6px 12px rgba(0, 0, 0, 0.15);   /* Lighter shadow for depth */
+    transform: translateY(-4px); /* Slight lift effect */
+}
+
+.paper:hover .paperButton {
+    opacity: 1; /* Show the button on hover */
+    visibility: visible; /* Make the button clickable */
+    animation: unbugSlideInFromLeft 0.5s ease-out;
+}
+
+.paperWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes unbugSlideInFromLeft {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        background-color: transparent;
+    }
+    to {
+        transform: translateX(0); /* End at the normal position */
+        background: none;
+    }
 }
 
 @keyframes spin {

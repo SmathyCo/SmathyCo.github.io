@@ -187,7 +187,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const titleElements = document.querySelectorAll('.about');
-    const titleElements2 = document.querySelectorAll('.cardv2');
+    const titleElements2 = document.querySelectorAll('.paper');
     const titleElements3 = document.querySelectorAll('.contactus');
 
     const observer = new IntersectionObserver((entries) => {

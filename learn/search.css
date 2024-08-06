@@ -1,7 +1,47 @@
-.input {
-    height: 25px;
-    width: 200px;
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px 0px 0px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(180deg, rgba(33,33,33,1) 0%, rgba(0,0,0,1) 100%);
+    color: #ffffff;
     font-size: 16px;
+    outline: none;
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.5), /* Outer glow */
+        0 0 20px rgba(255, 255, 255, 0.3), /* Inner glow */
+        0 0 30px rgba(255, 255, 255, 0.2); /* More intense inner glow */
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar:hover {
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.7), /* Stronger outer glow */
+        0 0 40px rgba(255, 255, 255, 0.5), /* Stronger inner glow */
+        0 0 60px rgba(255, 255, 255, 0.4); /* Most intense inner glow */
+}
+
+.search-bar:focus {
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.7), /* Stronger outer glow */
+        0 0 30px rgba(255, 255, 255, 0.5), /* Stronger inner glow */
+        0 0 50px rgba(255, 255, 255, 0.4); /* Most intense inner glow */
+}
+
+/* Animation for gradient background */
+@keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
 }
 
 .enterButton {
@@ -10,11 +50,89 @@
     width: 90px;
     background-color: rgb(40, 40, 255);
     color: white;
-    border: solid 1px black;
-    border-radius: 5px;
 }
 
 .enterButton:hover {
     transition: ease 0.3s;
     background-color: rgb(64, 64, 255);
+}
+
+.results {
+    color: rgb(48, 44, 255);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.results:hover {
+    color: rgb(20, 16, 255);
+}
+
+
+/*IMPORTANT: THE .resultsDiv is ONLY FOR CSS APPLIED AFTER A SEARCH HAS BEEN MADE!*/
+/*           IF YOU WANT TO CHANGE THE DIV CSS NO MATTER WHAT, USE '#results'     */
+.resultsDiv {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    padding: 20px; /* Add some padding for content */
+    margin-top: 50px;
+    margin-bottom: -75px;
+}
+
+.resultsDiv::before,
+.resultsDiv::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.resultsDiv::before {
+    animation: animStar 60s linear infinite; /* Default animation speed */
+    transition: animation-duration 0.5s ease; /* Smooth transition on hover */
+}
+
+.resultsDiv::after {
+    top: -10px;
+    left: -10px;
+    background-size: 50px 50px;
+    animation: animStarRotate 90s linear infinite; /* Default animation speed */
+    transition: animation-duration 0.5s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect to make stars move faster */
+.resultsDiv:hover::before {
+    animation-duration: 10s; /* Faster speed on hover */
+}
+
+.resultsDiv:hover::after {
+    animation-duration: 25s; /* Faster speed on hover */
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes animStarRotate {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0);
+    }
 }

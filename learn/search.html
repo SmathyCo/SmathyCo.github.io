@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="search.css">
     <link rel="icon" type="image/x-icon" href="../img/filled.png">
     <title>SmathyCo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--for icons and such-->
 </head>
 <body>
     <nav style="top: 0;">
@@ -20,10 +21,15 @@
     <section class="main-title">
         <p class="p1">Search</p>
         <div style="display: inline-block;">
-            <input type="text" id="search" class="input">
-            <button onclick="search()" class="enterButton">Enter</button>
+            <form id="searchForm">
+                <div class="search-container">
+                    <input id="searchInput" type="text" class="search-bar" placeholder="Search a programming language">
+                    <button class="search-bar" type="submit" style="height: 50px; width: 50px; border-radius: 0px 30px 30px 0px; background: linear-gradient(180deg, rgba(74,74,74,1) 0%, rgba(33,33,33,1) 100%);"><i class="fa fa-search" style="margin-right: 7px;"></i></button>
+                    <!--<button type="submit" style="border: none;height: 40px;width: 50px;margin-left: 20px;border-radius: 100%;"><i class="fa fa-search"></i></button>-->
+                </div>
+            </form>
         </div>
-        <p class="p2">Search for a programming language that you would like to learn or would like to learn more about.</p>
+        <div id="results"></div>
         <section style="margin-top: 150px;">
             <p style="font-size: 20px;font-weight: bold;">Want to learn how to build a website?</p>
             <button class="enterButton" style="border: none;height: 35px;" onclick="goLoading('../loading.html', './article/websitecreation/websitecreation.html')">View article</button>
