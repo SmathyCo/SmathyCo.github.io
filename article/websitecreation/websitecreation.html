@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" type="image/x-icon" href="../../img/filled.png">
+    <title>How to code a website?</title>
+</head>
+<body>
+    <nav id="navbar" style="margin-top: -130px;">
+        <ul>
+            <li style="margin-right: 20%;"><a style="color: black;" href="../../learn/search.html">Learn</a></li>
+            <li><a href="../../index.html" style="color: black;">Home</a></li>
+            <li style="margin-left: 20%;"><a style="color: black;" onclick="scrollToId('contact')">Contact</a></li>
+        </ul>
+    </nav>
+    <div style="text-align: center;margin-top: 150px;">
+        <img width="200px" src="../../img/filled.png" alt="Logo">
+    </div>
+    <div style="margin-top: 200px;margin-left: 50px;">
+        <p style="text-align: center;font-weight: bold;font-size: 30px;margin-bottom: 150px;margin-left: -50px;">How to code a website?</p>
+        <p style="font-weight: bold;font-size: 25px;">Installing A Code Editor</p>
+        <p>1. Download the code editor called "Visual Studio Code" from <a href="https://code.visualstudio.com/"><span style="color: rgb(0, 132, 255);">here</span></a>.</p>
+        <p>2. Run the downloaded file.</p>
+        <p>3. Follow the installation instructions.</p>
+        <p>4. Run the code editor.</p>
+        <p style="font-weight: bold;font-size: 25px;margin-top: 100px;">Creating A New Project</p>
+        <p>1. Open the file explorer.</p>
+        <p>2. Create a new folder.</p>
+        <p>3. Drag and drop the folder in the code editor.</p>
+        <p>4. On the top left you should see a "+" when you hover over your project's folder name.</p>
+        <p>5. Name your file "index.html".</p>
+        <p>6. Click on the file to open the "index.html" file in the code editor.</p>
+        <p style="font-weight: bold;font-size: 25px;margin-top: 100px;">Writing HTML Code</p>
+        <p>1. In the "index.html" file, write the following code:</p>
+        <pre style="border: solid 1px black;border-radius: 10px;width: fit-content;padding: 10px;background-color: #343942;color: white;"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        
+    &lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+        <p>Explanation: This code represents a basic HTML5 document structure. It includes:</p>
+        <div style="line-height: 25px;margin-left: 25px;">
+            <li><strong>&lt;!DOCTYPE html&gt;</strong>: Declares the document type and HTML version.</li>
+            <li><strong>&lt;html lang="en"&gt;</strong>: The root element of the HTML document, with the language set to English.</li>
+            <li><strong>&lt;head&gt;</strong>: Contains meta-information about the document, such as character encoding, viewport settings, and the title.</li>
+            <li><strong>&lt;meta charset="UTF-8"&gt;</strong>: Specifies the character encoding for the document.</li>
+            <li><strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</strong>: Sets the viewport to make the page responsive on different devices.</li>
+            <li><strong>&lt;title&gt;Document&lt;/title&gt;</strong>: Sets the title of the document, which appears in the browser tab.</li>
+            <li><strong>&lt;body&gt;</strong>: Contains the content of the document, such as text, images, and other elements.</li>
+        </div>
+        <p style="font-weight: bold;font-size: 25px;margin-top: 100px;">Styling Your Website</p>
+        <p>1. To start adding style to your website we are going to use some CSS (Cascading Style Sheet).</p>
+        <p>2. Add a &lt;style&gt;&lt;/style&gt; into your &lt;body&gt;&lt;/body&gt; tag.</p>
+        <p>3. Between the two style tags you can now add some CSS code. To start lets add this:</p>
+        <pre style="border: solid 1px black;border-radius: 10px;width: fit-content;padding: 10px;background-color: #343942;color: white;"><code>
+/* This CSS targets both &lt;body&gt; and &lt;html&gt; elements */
+body, html {
+    /* Centers the element horizontally and removes margins on the sides */
+    margin: auto 0;
+    
+    /* Sets the background color to blue */
+    background-color: blue;
+}
+        </code></pre>
+        <p style="font-weight: bold;font-size: 25px;margin-top: 100px;">Viewing Your Website</p>
+        <p>1. Open the file explorer.</p>
+        <p>2. Open your projet folder.</p>
+        <p>3. Right click your "index.html" file and click "Open With" then choose with your browser.</p>
+        <p>4. Your website should now be displayed in your browser.</p>
+
+        <p style="font-weight: bold;font-size: 25px;margin-top: 100px;">Conclusion</p>
+        <p>That's it! You've now learned how to create a basic website using HTML and CSS. You can now start building more complex and interactive websites. Happy coding!</p>
+
+        <div style="line-height: 20px;">
+            <p style="font-weight: bold;font-size: 25px;margin-top: 100px;">Need Help?</p>
+            <div style="line-height: 10px;margin-bottom: 100px;">
+                <p>If you need help building your website, you can contact-us by email our join our Discord for further assistance.</p>
+                <div style="margin-left: 10px;">
+                    <p>SmathyCo@gmail.com</p>
+                    <a href="https://discord.gg/9xPhnsb5EK"><p>Discord</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer" style="padding-top: 50px;" id="footer">
+        <div style="display: flex;justify-content: center;" id="div1">
+            <div style="margin-top: 45px;">
+                <img onclick="openFile('index.html')" src="../../img/smathyco.png" width="200px" alt="SmathyCo">
+            </div>
+            <div style="margin-left: 150px;margin-right: 350px;text-align: left;">
+                <p style="color: white;font-weight: bold;font-size: 17px;">Get Something Done</p>
+                <p onclick="openFile('../../pages/websitecreation.html')" style="color: white;cursor: pointer;">Website Creation</p>
+                <p onclick="openFile('../../pages/softwarecreation.html')" style="color: white;cursor: pointer;">Software Creation</p>
+                <p onclick="openFile('../../pages/codecreation.html')" style="color: white;cursor: pointer;">Code Creation</p>
+            </div>
+            <div>
+                <div style="margin-bottom: -15px;">
+                    <a href="https://www.instagram.com/SmathyCo/"><img width="40px" src="../../img/igin.png" alt="Instagram" style="margin-right: 20px;border: solid 1px white;border-radius: 50%;padding: 3px;"></a>
+                </div>
+                <br>
+                <div style="margin-bottom: -15px;">
+                    <a href="https://www.linkedin.com/company/smathyco/"><img width="40px" src="../../img/inin.png" alt="LinkedIn" style="margin-right: 20px;border: solid 1px white;border-radius: 50%;padding: 3px;"></a>
+                </div>
+                <br>
+                <div style="margin-bottom: -15px;">
+                    <a href="https://github.com/SmathyCo"><img width="40px" src="../../img/ghin.png" alt="Github" style="margin-right: 20px;border: solid 1px white;border-radius: 50%;padding: 3px;"></a>
+                </div>
+                <br>
+                <div style="margin-bottom: 30px;">
+                    <a href="https://discord.gg/9xPhnsb5EK"><img width="40px" src="../../img/dcin.png" alt="Discord" style="margin-right: 20px;border: solid 1px white;border-radius: 50%;padding: 3px;"></a>
+                </div>
+            </div>
+        </div>
+        <div id="div2" style="width: 75%;height: 1px;background-color: white;margin-left: auto;margin-right: auto;"></div>
+        <p class="rights" id="rights" style="padding-bottom: 100px;">© 2024 SmathyCo. All rights reserved.</p>
+    </footer>
+</body>
+<script src="../../index.js"></script>
+</html>

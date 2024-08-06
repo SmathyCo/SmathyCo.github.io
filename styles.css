@@ -30,7 +30,8 @@ nav {
     left: 0;
     right: 0;
     z-index: 9999;
-    margin-top: 10px;
+    padding-top: 10px;
+    animation: slideDown 1s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 .mainSection {
@@ -41,21 +42,8 @@ nav {
     text-align: center;
 }
 
-.plan {
-    transition: ease 0.3s;
-    text-align: center;
-    width: 35%;
-    cursor: pointer;
-}
-
-.plan .p {
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.plan:hover {
-    transition: ease 0.3s;
-    transform: translateY(-5px);
+.about.show {
+    opacity: 1;
 }
 
 .about .title, .contactus .title {
@@ -63,9 +51,11 @@ nav {
 }
 
 .about, .contactus {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 200px;
+    margin-top: 50px;
+    margin-bottom: 250px;
 }
 
 .about .text, .contactus .text {
@@ -77,14 +67,20 @@ nav {
     margin-top: 250px;
 }
 
+.contactus.show {
+    opacity: 1;
+}
+
 .footer {
-    background-color: rgb(165, 165, 165);
-    height: 48px;
+    background-color: hsl(180deg 5.88% 10%);
+    height: calc(100% + 100px);
 }
 
 .footer .rights {
     text-align: center;
     padding: 1%;
+    color: white;
+    margin-bottom: 0;
 }
 
 .disc2 {
@@ -101,12 +97,701 @@ nav {
     margin-bottom: 10px;
 }
 
+.hashtag {
+    margin-top: -7px;
+    margin-right: 25%;
+    margin-left: -25%;
+}
+
+.socialmedias {
+    position: absolute;
+    margin-top: 30vh;
+    margin-left: 25px;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.p2 {
+    margin-left: 25%;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+}
+
+.btn svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn:hover svg {
+    transform: translateX(5px) rotate(90deg);
+}
+
+.btn:hover span {
+    transform: translateX(7px);
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+  
+.svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+}
+  
+.svgIcon path {
+    fill: white;
+}
+  
+.button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(181, 160, 255);
+    align-items: center;
+}
+  
+.button:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+}
+  
+.button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    /* transition-duration: .3s; */
+    font-size: 0px;
+}
+  
+.button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+}
+
+.card-title {
+    color: #262626;
+    font-size: 1.5em;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.small-desc {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #452c2c;
+}
+
+.small-desc {
+    font-size: 1em;
+}
+
+.go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #6293c8, #384c6c);
+    border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+}
+
+.fade-in {
+    color: white;
+    font-size: 23px;
+    margin-top: -0.01%;
+    opacity: 0; /* Start as invisible */
+    transform: translateX(-100px); /* Start from the left */
+    transition: opacity 2s ease, transform 2s ease; /* Transition for the animation */
+}
+
+.fade-in.visible {
+    opacity: 1; /* Fully opaque */
+    transform: translateX(0); /* End at its original position */
+}
+
+.cardv2 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    width: 500px;
+    border: solid 1px rgb(145, 145, 145);
+    border-radius: 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #302b62, #5e4b8b, #a89cc0);
+    box-shadow: inset 0 0 10px 7px rgba(255, 255, 255, 0.5);
+    color: lightgray;
+    position: relative; /* Needed for positioning pseudo-elements */
+    overflow: hidden; /* Ensure dots don't overflow */
+}
+
+.cardv2:hover {
+    animation: spin 5s linear infinite;
+}
+
+.cardv2.show {
+    opacity: 1;
+}
+
+.cardv2::before,
+.cardv2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+    background-size: 50px 50px; /* Adjust dot size */
+    z-index: 0;
+}
+
+.cardv2::before {
+    background-position: 0 0;
+}
+
+.cardv2::after {
+    background-position: 25px 25px; /* Slightly offset for a more random look */
+}
+
+.cardv2 * {
+    position: relative;
+    z-index: 1;
+}
+
+.socialmediacircle {
+    transition: ease 0.5s;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.socialmediacircle:hover {
+    transition: ease 0.5s;
+    transform: scale(1.1);
+}
+
+.paper.show {
+    opacity: 1;
+}
+
+.paper {
+    opacity: 0;
+    transition: 
+        opacity 0.7s ease-in,        /* Transition for opacity */
+        box-shadow 0.3s ease,        /* Transition for box-shadow */
+        transform 0.3s ease;         /* Transition for transform */
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    background: #fff;
+    border-radius: 10px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+.paper:hover {
+    box-shadow: 
+        0 16px 32px rgba(0, 0, 0, 0.3),  /* Stronger shadow for higher elevation */
+        0 8px 12px rgba(0, 0, 0, 0.2);   /* Lighter shadow for additional depth */
+    transform: translateY(-10px); /* Lifts the paper up */
+}
+
+.paperTitle {
+    font-weight: bold;
+    font-size: 25px;
+    font-weight: 760;
+    letter-spacing: 0.5px;
+}
+
+.paperButton {
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 
+        background-color 0.3s ease, 
+        box-shadow 0.3s ease, 
+        transform 0.3s ease; /* Smooth transitions */
+    opacity: 0; /* Hide the button by default */
+    visibility: hidden; /* Ensure the button is not clickable */
+}
+
+.paperButton:hover {
+    background-color: #00000048; /* Darker shade on hover */
+    box-shadow: 
+        0 12px 24px rgba(0, 0, 0, 0.2),  /* Stronger shadow for elevation */
+        0 6px 12px rgba(0, 0, 0, 0.15);   /* Lighter shadow for depth */
+    transform: translateY(-4px); /* Slight lift effect */
+}
+
+.paper:hover .paperButton {
+    opacity: 1; /* Show the button on hover */
+    visibility: visible; /* Make the button clickable */
+    animation: unbugSlideInFromLeft 0.5s ease-out;
+}
+
+.paperWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes unbugSlideInFromLeft {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        background-color: transparent;
+    }
+    to {
+        transform: translateX(0); /* End at the normal position */
+        background: none;
+    }
+}
+
+@keyframes spin {
+    0% {
+        background: linear-gradient(135deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    1% {
+        background: linear-gradient(138deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    2% {
+        background: linear-gradient(141deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    3% {
+        background: linear-gradient(144deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    4% {
+        background: linear-gradient(147deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    5% {
+        background: linear-gradient(150deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    6% {
+        background: linear-gradient(153deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    7% {
+        background: linear-gradient(156deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    8% {
+        background: linear-gradient(159deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    9% {
+        background: linear-gradient(162deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    10% {
+        background: linear-gradient(165deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    11% {
+        background: linear-gradient(168deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    12% {
+        background: linear-gradient(171deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    13% {
+        background: linear-gradient(174deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    14% {
+        background: linear-gradient(177deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    15% {
+        background: linear-gradient(180deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    16% {
+        background: linear-gradient(183deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    17% {
+        background: linear-gradient(186deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    18% {
+        background: linear-gradient(189deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    19% {
+        background: linear-gradient(192deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    20% {
+        background: linear-gradient(195deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    21% {
+        background: linear-gradient(198deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    22% {
+        background: linear-gradient(201deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    23% {
+        background: linear-gradient(204deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    24% {
+        background: linear-gradient(207deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    25% {
+        background: linear-gradient(210deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    26% {
+        background: linear-gradient(213deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    27% {
+        background: linear-gradient(216deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    28% {
+        background: linear-gradient(219deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    29% {
+        background: linear-gradient(222deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    30% {
+        background: linear-gradient(225deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    31% {
+        background: linear-gradient(228deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    32% {
+        background: linear-gradient(231deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    33% {
+        background: linear-gradient(234deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    34% {
+        background: linear-gradient(237deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    35% {
+        background: linear-gradient(240deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    36% {
+        background: linear-gradient(243deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    37% {
+        background: linear-gradient(246deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    38% {
+        background: linear-gradient(249deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    39% {
+        background: linear-gradient(252deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    40% {
+        background: linear-gradient(255deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    41% {
+        background: linear-gradient(258deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    42% {
+        background: linear-gradient(261deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    43% {
+        background: linear-gradient(264deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    44% {
+        background: linear-gradient(267deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    45% {
+        background: linear-gradient(270deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    46% {
+        background: linear-gradient(273deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    47% {
+        background: linear-gradient(276deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    48% {
+        background: linear-gradient(279deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    49% {
+        background: linear-gradient(282deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    50% {
+        background: linear-gradient(285deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    51% {
+        background: linear-gradient(288deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    52% {
+        background: linear-gradient(291deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    53% {
+        background: linear-gradient(294deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    54% {
+        background: linear-gradient(297deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    55% {
+        background: linear-gradient(300deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    56% {
+        background: linear-gradient(303deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    57% {
+        background: linear-gradient(306deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    58% {
+        background: linear-gradient(309deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    59% {
+        background: linear-gradient(312deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    60% {
+        background: linear-gradient(315deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    61% {
+        background: linear-gradient(318deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    62% {
+        background: linear-gradient(321deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    63% {
+        background: linear-gradient(324deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    64% {
+        background: linear-gradient(327deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    65% {
+        background: linear-gradient(330deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    66% {
+        background: linear-gradient(333deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    67% {
+        background: linear-gradient(336deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    68% {
+        background: linear-gradient(339deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    69% {
+        background: linear-gradient(342deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    70% {
+        background: linear-gradient(345deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    71% {
+        background: linear-gradient(348deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    72% {
+        background: linear-gradient(351deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    73% {
+        background: linear-gradient(354deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    74% {
+        background: linear-gradient(357deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    75% {
+        background: linear-gradient(360deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    76% {
+        background: linear-gradient(363deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    77% {
+        background: linear-gradient(366deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    78% {
+        background: linear-gradient(369deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    79% {
+        background: linear-gradient(372deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    80% {
+        background: linear-gradient(375deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    81% {
+        background: linear-gradient(378deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    82% {
+        background: linear-gradient(381deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    83% {
+        background: linear-gradient(384deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    84% {
+        background: linear-gradient(387deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    85% {
+        background: linear-gradient(390deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    86% {
+        background: linear-gradient(393deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    87% {
+        background: linear-gradient(396deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    88% {
+        background: linear-gradient(399deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    89% {
+        background: linear-gradient(402deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    90% {
+        background: linear-gradient(405deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    91% {
+        background: linear-gradient(408deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    92% {
+        background: linear-gradient(411deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    93% {
+        background: linear-gradient(414deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    94% {
+        background: linear-gradient(417deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    95% {
+        background: linear-gradient(420deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    96% {
+        background: linear-gradient(423deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    97% {
+        background: linear-gradient(426deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    98% {
+        background: linear-gradient(429deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    99% {
+        background: linear-gradient(432deg, #302b62, #5e4b8b, #a89cc0);
+    }
+    100% {
+        background: linear-gradient(435deg, #302b62, #5e4b8b, #a89cc0); /* Loop back to the start */
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* End at the normal position */
+        opacity: 1; /* End fully visible */
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @media only screen and (max-width: 414px) and (max-height: 896px) {
+    body {
+        max-width: 414px;
+        max-height: 896px;
+    }
+
     .logo {
         width: 250px;
     }
+
     .footer .rights {
         padding: 3%;
+    }
+
+    .mainSection {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .inner ul {
+        width: 100%;
+    }
+
+    ul {
+        width: 100vw;
+    }
+
+    .hashtag {
+        margin-top: -25px;
+    }
+
+    .cardv2.show {
+        margin-left: 0;
+        width: calc(100% - 50px);
+    }
+
+    .btng {
+        margin-top: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .p2 {
+        margin-left: 5vw;
+    }
+
+    .socialmedias {
+        margin-top: 60vh;
     }
 }
 
@@ -126,6 +811,13 @@ nav {
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
+
 .sign-up-button:hover {
     background-color: #0056b3;
+}
+
+.twop {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }

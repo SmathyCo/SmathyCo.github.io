@@ -8,80 +8,63 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function search() {
-    function op(lk) {
-        window.location.href = lk;
-        return;
-    }
-    let x = document.getElementById("search").value.toUpperCase().replaceAll(" ", "");
-    
-    if (x === "") {
-        createPopup("Please insert a programming language name, if you have no idea what the programming language you want to learn is, you should ask on our Discord.");
-    } else if (x === "ASSEMBLY" || x === "ASM") {
-        op("languages/assembly/assembly.html");
-    } else if (x === "C" || x === "CLANG") {
-        op("languages/c/c.html");
-    } else if (x === "C#" || x === "CS" || x === "CSHARP") {
-        op("languages/csharp/csharp.html");
-    } else if (x === "CSS") {
-        op("languages/css/css.html");
-    } else if (x === "D" || x === "DLANG") {
-        op("languages/d/d.html");
-    } else if (x === "DART" || x === "DT") {
-        op("languages/dart/dart.html");
-    } else if (x === "GO" || x === "GOLANG") {
-        op("languages/go/go.html");
-    } else if (x === "HTML") {
-        op("languages/html/html.html");
-    } else if (x === "JAVA" || x === "JV") {
-        op("languages/java/java.html");
-    } else if (x === "JAVASCRIPT" || x === "JS") {
-        op("languages/javascript/javascript.html");
-    } else if (x === "KOTLIN" || x === "KOT") {
-        op("languages/kotlin/kotlin.html");
-    } else if (x === "NODEJS" || x === "NODE.JS" || x === "NODE") {
-        op("languages/nodejs/nodejs.html");
-    } else if (x === "OBJECTIVEC" || x === "OBJC") {
-        op("languages/objectivec/objectivec.html");
-    } else if (x === "PERL") {
-        op("languages/perl/perl.html");
-    } else if (x === "PHP") {
-        op("languages/php/php.html");
-    } else if (x === "PYTHON" || x === "PY") {
-        op("languages/python/python.html");
-    } else if (x === "R") {
-        op("languages/r/r.html");
-    } else if (x === "RUBY" || x === "RB") {
-        op("languages/ruby/ruby.html");
-    } else if (x === "RUST" || x === "RS") {
-        op("languages/rust/rust.html");
-    } else if (x === "SCALA") {
-        op("languages/scala/scala.html");
-    } else if (x === "SCRATCH") {
-        op("languages/scratch/scratch.html");
-    } else if (x === "SKRIPT" || x === "SK") {
-        op("languages/skript/skript.html");
-    } else if (x === "SQL") {
-        op("languages/sql/sql.html");
-    } else if (x === "SWIFT") {
-        op("languages/swift/swift.html");
-    } else if (x === "TYPESCRIPT" || x === "TS") {
-        op("languages/typescript/typescript.html");
-    } else if (x === "VISUALBASIC" || x === "VB") {
-        op("languages/visualbasic/visualbasic.html");
-    } else if (x === "GROOVY") {
-        op("languages/groovy/groovy.html");
-    } else if (x === "MATLAB" || x === "ML") {
-        op("languages/matlab/matlab.html");
-    } else if (x === "MAKE" || x === "MK" || x === "MF" || x === "MAKEFILE") {
-        op("languages/make/make.html");
-    } else if (x === "SHELL" || x === "SH") {
-        op("languages/shell/shell.html");
-    } else if (x === "POWERSHELL" || x === "PS") {
-        op("languages/powershell/powershell.html");
-    } else if (x === "BASH") {
-        op("languages/bash/bash.html");
-    } else {
-        createPopup("The programming language " + document.getElementById("search").value + " wasn't found. Try correcting errors in the name or suggest the programming language on our Discord.");
-    }
+function goLoading(x, y) {
+    window.location.href = x + '?redirectUrl=' + encodeURIComponent(y);
 }
+
+function capitalizeFirstLetter(str) {
+    if (str.length === 0) return str; // Handle empty strings
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    let error;
+    if (query === "") {
+        error = true;
+    }
+    const folders = ['assembly', 'bash', 'c', 'csharp', 'css', 'd', 'dart', 'go', 'groovy', 'html', 'java', 'javascript', 'kotlin', 'make', 'matlab', 'nodejs', 'objectivec', 'perl', 'php', 'python', 'r', 'ruby', 'rust', 'scala', 'scratch', 'shell', 'skript', 'sql', 'swift', 'typescript', 'visualbasic'];
+
+    // Find all folders that contain the query
+    const matchedFolders = folders.filter(folder => folder.includes(query));
+
+    // Get the results div
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '';
+    resultsDiv.classList.add('resultsDiv');
+
+    if (matchedFolders.length > 0) {
+        // Display matching folders as links with highlighted matching text
+        matchedFolders.forEach(folder => {
+            if (error != true) {
+                resultsDiv.style.marginTop = "50px";
+                const link = document.createElement('a');
+                link.href = `./languages/${folder}/${folder}.html`;
+                link.classList.add('results');
+                link.style.cursor = "pointer";
+    
+                // Highlight the matching text
+                const startIndex = folder.indexOf(query);
+                const endIndex = startIndex + query.length;
+                const highlightedText = folder.substring(startIndex, endIndex);
+                const highlightedFolder = capitalizeFirstLetter(folder.substring(0, startIndex)) +
+                `<span style="color: white;">${capitalizeFirstLetter(folder.substring(0, startIndex)) === "" ? capitalizeFirstLetter(highlightedText) : highlightedText}</span>` +
+                folder.substring(endIndex);
+                
+                link.innerHTML = highlightedFolder;
+                resultsDiv.appendChild(link);
+                resultsDiv.appendChild(document.createElement('br'));
+            } else {
+                resultsDiv.innerHTML = '<p style="color: red;">Please enter a programming language name.</p>';
+                resultsDiv.classList.remove('resultsDiv');
+                resultsDiv.style.marginTop = "100px";
+                resultsDiv.style.fontWeight = "bold";
+                resultsDiv.style.textShadow = "black 0px 0px 10px"
+                return;
+            }
+        });
+    } else {
+        resultsDiv.textContent = 'No matching folders found';
+    }
+});

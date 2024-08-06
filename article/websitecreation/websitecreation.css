@@ -1,0 +1,32 @@
+body {
+    background-color: #f5f5f5;
+}
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #2980b9;
+}
+p {
+    font-size: 22px;
+    margin-top: 50px;
+}
+button:focus {
+    outline: none;
+}
+@media screen and (max-width: 600px) {
+    p {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 400px) {
+    p {
+        font-size: 16px;
+    }
+}
