@@ -317,6 +317,52 @@ body.scrolled section:is(:first-of-type, #container) {
     font-size: 1.25em;
 }
 
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 .5px 5px 0 #0008;
+    padding: 17px 0 25px;
+    gap: 0 15px;
+}
+
+#services > :not(.nl, :last-child) {
+    margin-bottom: 15px;
+}
+
+#services > h2 {
+    width: 100%;
+    text-align: center;
+}
+
+#services > .service {
+    width: 24%;
+    height: 200px;
+    box-shadow: 0 0 5px #0008;
+    display: block;
+    word-wrap: break-word;
+    padding: 15px 20px;
+    letter-spacing: 0.2px;
+}
+
+#services > .service > p {
+    letter-spacing: 0.3px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#services > .service > .btn {
+    width: fit-content;
+    display: block;
+    margin-top: 5px;
+}
+
+#services > .nl {
+    width: 100%;
+    height: 1px;
+}
+
 #creation {
     background: #0000;
 }
