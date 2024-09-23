@@ -1,50 +1,54 @@
 nav ul li a {
-    color: white;
+  color: black;
 }
 
 .main-title {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/galaxy.jpg');
-    background-size: cover;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
-    color: white;
+  background-color: #f0f0f0;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  color: black;
 }
 
 .main-title .p1 {
-    font-size: 45px;
-    font-weight: bold;
-    margin-top: 0;
-    padding-top: 130px;
+  font-size: 45px;
+  font-weight: bold;
+  margin-top: 0;
+  padding-top: 130px;
 }
 
 .main-title .p2 {
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 50px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 50px;
 }
 
 .disc {
-    transition: ease 0.3s;
+  transition: ease 0.3s;
+  filter: invert(1);
 }
 
 .disc:hover {
-    transition: ease 0.3s;
-    transform: translateY(-5px);
+  transition: ease 0.3s;
+  transform: translateY(-5px);
+}
+
+.disc2 {
+  filter: invert(1);
 }
 
 /* Make sure the wrapper takes up the full viewport height */
 .wrapper {
-    display: flex;
-    align-items: center;  /* Vertically center */
-    justify-content: center;  /* Horizontally center */
-    height: 60vh;  /* Full viewport height */
-    margin: 0;
+  display: flex;
+  align-items: center;  /* Vertically center */
+  justify-content: center;  /* Horizontally center */
+  height: 60vh;  /* Full viewport height */
+  margin-bottom: 20px;
 }
 
 /* Optional: you can add additional styling for the content */
 .content {
-    text-align: center;
+  text-align: center;
 }
 
 .btng {
@@ -81,7 +85,7 @@ strong {
   font-family: 'Avalors Personal Use';
   font-size: 12px;
   letter-spacing: 5px;
-  color: #FFFFFF;
+  color: white;
   text-shadow: 0 0 4px white;
 }
 

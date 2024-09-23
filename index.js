@@ -187,7 +187,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const titleElements = document.querySelectorAll('.about');
-    const titleElements2 = document.querySelectorAll('.paper');
     const titleElements3 = document.querySelectorAll('.contactus');
 
     const observer = new IntersectionObserver((entries) => {
@@ -203,9 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     titleElements.forEach(element => {
-        observer.observe(element);
-    });
-    titleElements2.forEach(element => {
         observer.observe(element);
     });
     titleElements3.forEach(element => {
